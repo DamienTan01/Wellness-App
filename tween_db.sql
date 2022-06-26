@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2022 at 02:59 PM
+-- Generation Time: Jun 26, 2022 at 09:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -88,6 +88,7 @@ CREATE TABLE `tips` (
 
 CREATE TABLE `users` (
   `user_id` varchar(6) NOT NULL,
+  `user_type` char(5) NOT NULL,
   `username` varchar(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `dob` date DEFAULT NULL,
