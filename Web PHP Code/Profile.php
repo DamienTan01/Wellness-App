@@ -23,6 +23,8 @@
 	<head>
 		<title>- Profile Page -</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+		<link rel="stylesheet" href="css/style.css" />
 		
 		<style>
 			
@@ -235,6 +237,8 @@
 					
 					<h1>Account Details</h1>					
 					<h3 class = "upperT">Personal Details</h3>	
+
+					<br>
 					
 					<div class = "InputText">
 						<input type = "text" name = "Username" id = "Username"  value = "<?PHP echo $username; ?>"/>
@@ -310,10 +314,11 @@
 					<br>
 					
 					<div class = "InputText">						
-						<i class="far fa-eye" onclick = "show()"></i>
-						<input type = "password" name = "User_pwd" id = "User_pwd" value = "<?PHP echo $password; ?>" required />
-						<label>Password</label>
+						<i class="fa fa-eye" onclick = "show()"></i>						
+						<input type = "password" name = "User_pwd" id = "User_pwd" value = "<?PHP echo $password; ?> " required /> 
+						<label>Password</label>						
 					</div>
+					
 					<br><br>
 
 					<input type = "submit" class = "submit" name = "submit" value = "Update" onClick = "return confirmSubmit()">
@@ -337,7 +342,7 @@
 		
 		function confirmSubmit()
 		{
-			var agree = confirm("Are you sure your details are correct?");
+			var agree = confirm("Are you sure your details are correct ?");
 			if (agree)
 			{
 				return true;

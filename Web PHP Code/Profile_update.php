@@ -17,14 +17,14 @@
 		$GENDER		= $_POST['User_gender'];
 		
 		$query = "
-			UPDATE `user_table` SET 
-			`User_name` = '$NAME',
-			`User_email` = '$EMAIL',
-			`User_pwd` = '$PASSWORD',
-			`User_contact` = '$CONTACT',
-			`User_birthday` = '$BIRTHDAY',
-			`User_gender` = '$GENDER' 
-			WHERE User_ID = '$ID'
+			UPDATE `users` SET 
+			`username` = '$USERNAME',
+			`name` = '$NAME',
+			`email` = '$EMAIL',
+			`password` = '$PASSWORD',
+			`dob` = '$BIRTHDAY',
+			`gender` = '$GENDER' 
+			WHERE user_id = '$ID'
 			";
 				
 		if(mysqli_query($connected,$query))
