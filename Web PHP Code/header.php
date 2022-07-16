@@ -29,17 +29,20 @@
 		<style>
 			body
 			{
-				background-color:snow;				
+				background-color:#EFFCFF;
 			}
 			
 			.content
 			{
-				padding:5px;
-				background-color:#B2D2FC;
+				padding:5px;				
 				height:100%;
 				padding-top:6%;
 				font-size:20px;
 				font-family:georgia,garamond,serif;
+				
+				background-image: url(icon/background.png);
+				background-repeat: no-repeat;
+				background-size: cover;
 			}
 			
 			.Scrollbtn
@@ -73,13 +76,15 @@
 				font-family:georgia,garamond,serif;
 				text-align:left;
 				background-color:#85FFFF;
-				background-image: linear-gradient(0deg, #85FFFF, snow);
+				background-image: linear-gradient(-35deg, #C6BFFF, snow);
 				position:fixed;
 				height:10%;
 				width:100%;
 				font-size:20px;
 				padding:10px;
 				box-shadow: 0 0 10px rgba(0,0,0,0.5);
+				
+				z-index:999;
 			}
 
 			.navbar a 
@@ -105,25 +110,14 @@
 	<body>	
 		<div class = "navbar">
 			<a href = "Home.php"><img class = "logo" src = "icon/Logo.png" width = "50"></a>
-			<a href = "Profile.php"><i class="material-icons">insert_emoticon</i> 
-			<?PHP
-				if($name != null)
-				{
-					$user_name = $name;
-				}
-				else
-				{
-					$user_name = $ID;
-				}
-				echo $user_name;
-			?>
+			<a href = "Profile.php"><i class="far fa-meh-blank"></i> &nbsp;&nbsp;<?PHP echo $name; ?>
 			</a>
 			
-			<a href = "Staff.php"><i class = "material-icons">	people</i>  Admin</a>
-			<a href = "Tips.php"><i class = "material-icons">		airline_seat_legroom_normal</i>  Tips</a>
-			<a href = "Community.php"><i class = "material-icons">	category</i>  Community</a>
+			<a href = "Staff.php"><i class = "far fa-grimace"></i>&nbsp;&nbsp;Admin</a>
+			<a href = "Tips.php"><i class = "fa fa-bookmark"></i>&nbsp;&nbsp;Tips</a>
+			<a href = "Community.php"><i class = "	fas fa-fire-alt"></i>&nbsp;&nbsp;Community</a>
 			
-			<a href = 'index.php' onClick=\"javascript:return confirm('Are you sure you want to logout ?');\"><i class='material-icons'>logout</i>  Log Out</a>
+			<a href = "index.php" onclick = "return confirm('Are you sure you want to logout ?')">Log Out &nbsp;&nbsp;<i class = "fas fa-sign-out-alt"></i></a>
 		
 		</div>
 			

@@ -234,13 +234,13 @@
 					?>
 				</span>
 				
-				<h1 class = "title">Set up Admin</h1>
+				<h1 class = "title">Admin Register</h1>
 				
                 <br>
 				
 				<div class = "InputText">
-					<input type = "text" name = "User_ID" id = "User_ID" value = "EMP000" required />
-					<label>ID (Prefix : EMP000)</label>
+					<input type = "text" name = "User_ID" id = "User_ID" value = "ADM000" required />
+					<label>ID (Prefix : ADM000)</label>
 				</div>
 				
 				<br><br>

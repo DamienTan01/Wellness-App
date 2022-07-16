@@ -13,7 +13,7 @@
 		
 		if(mysqli_num_rows($query) == 0)
 		{
-			$_SESSION['message'] = "Login failed. Try again.";			
+			$_SESSION['message'] = "Login failed. Try again.";
 			header("location:index.php?st=Wrong-ID-or-Password");
 		}
 		else

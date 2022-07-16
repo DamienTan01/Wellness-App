@@ -22,8 +22,7 @@
 			$USER_type		= "Admin";
 			$USERNAME		= $_POST['Username'];
 			$EMAIL			= $_POST['User_email'];
-			$PASSWORD		= $_POST['User_pwd'];
-			
+			$PASSWORD		= $_POST['User_pwd'];			
 			
 			$query = "
 			INSERT INTO `users`
