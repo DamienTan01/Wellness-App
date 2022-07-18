@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 11:35 AM
+-- Generation Time: Jul 18, 2022 at 09:53 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -141,7 +141,7 @@ CREATE TABLE `records` (
 CREATE TABLE `tips` (
   `tip_id` varchar(6) NOT NULL,
   `tip_title` varchar(255) NOT NULL,
-  `tip_content` text NOT NULL,
+  `tip_content` longtext NOT NULL,
   `tip_media` text DEFAULT NULL,
   `tip_published` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -151,7 +151,11 @@ CREATE TABLE `tips` (
 --
 
 INSERT INTO `tips` (`tip_id`, `tip_title`, `tip_content`, `tip_media`, `tip_published`) VALUES
-('TIP000', 'Test Tip', 'asdjfhlasd fljadsh flj ahsdlfkjh df', NULL, '2022-07-18 03:49:08');
+('TIP001', 'Sha', 'Shy shy shy', '샤_bgr_2.jpg', '2022-07-19 03:03:38'),
+('TIP002', 'Test Tip2', 'AHHHHHHHHHHHHH', '샤_bgr_1.jpg', '2022-07-19 03:23:33'),
+('TIP003', 'Alcohol Free Tip', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.', 'image1.jpg', '2022-07-19 03:23:54'),
+('TIP004', 'ERm', 'What are the 5 duties of a principal? \r\n\r\n- Shaping a vision of academic success for all students. \r\n\r\n- Creating a climate hospitable to education. \r\n\r\n- Cultivating leadership in others. \r\n\r\n- Improving instruction. \r\n\r\n- Managing people, data and processes.\r\n', 'Link.png', '2022-07-19 03:29:12'),
+('TIP005', 'What are 5 benefits of wellness?', 'It is in high demand.\r\n\r\nIt improves productivity and performance.\r\n\r\nIt lowers the risk of illness and the impact of stress.\r\n\r\nIt lowers healthcare costs.\r\n\r\nIt improves teamwork.\r\n', 'gudetama.png', '2022-07-19 03:36:44');
 
 -- --------------------------------------------------------
 
