@@ -137,7 +137,7 @@
 				font-size:20px;
 				text-align: center;
 				text-decoration: none;
-				padding: 10px 120px;
+				padding: 10px 100px;
 				border:none;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 				border-radius:50px;
@@ -264,9 +264,9 @@
 					<label>Password</label>
 				</div>
 				
-				<br><br>
+				<br><br><br>
 						
-				<input type = "submit" class = "submit" name = "submit">
+				<input type = "submit" class = "submit" name = "submit" value = "REGISTER">
 			</form>	
 		</div>
 	</body>

@@ -81,7 +81,7 @@
 				height:10%;
 				width:100%;
 				font-size:20px;
-				padding:10px;
+				padding:13px;
 				box-shadow: 0 0 10px rgba(0,0,0,0.5);
 				
 				z-index:999;
