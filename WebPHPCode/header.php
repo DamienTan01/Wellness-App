@@ -76,7 +76,7 @@
 				font-family:georgia,garamond,serif;
 				text-align:left;
 				background-color:#85FFFF;
-				background-image: linear-gradient(-35deg, #C6BFFF, snow);
+				background-image: linear-gradient(0deg, #C6BFFF, snow);
 				position:fixed;
 				height:10%;
 				width:100%;
@@ -116,7 +116,6 @@
 			<a href = "Staff.php"><i class = "far fa-grimace"></i>&nbsp;&nbsp;Admin</a>
 			<a href = "Tips.php"><i class = "fa fa-bookmark"></i>&nbsp;&nbsp;Tips</a>
 			<a href = "Community.php"><i class = "fas fa-bullhorn"></i>&nbsp;&nbsp;Community</a>
-			<a href = "Achievement.php"><i class = "fas fa-certificate"></i>&nbsp;&nbsp;Achievement</a>
 			
 			<a href = "index.php" onclick = "return confirm('Are you sure you want to logout ?')">Log Out &nbsp;&nbsp;<i class = "fas fa-sign-out-alt"></i></a>
 		
