@@ -96,6 +96,20 @@
 				box-shadow:0 5px 10px #0080FF;
 			}
 			
+			.analysis
+			{
+				width: 35%;
+				height: 200px;
+				font-family:Arial;
+				font-size:20px;
+				background-color: #A2BCF2;
+				border-radius:30px;
+				color:snow;
+				outline:none;
+				border:none;	
+				box-shadow:0 5px 10px rgba(0,0,0,0.5);
+			}
+			
 		</style>
 	</head>
 	
@@ -104,10 +118,6 @@
 			<div class = "wrap">
 				<?PHP
 					$DATETIME = date("Y-m-d");
-					$TodayTotal = 0;
-					$YesterdayTotal = 0;
-					$LastWeekTotal = 0;
-					$AllTotal = 0;
 					
 					echo "<div class = 'dttm'>";
 						echo "<span>Date : " .$DATETIME. "</span>";
@@ -117,17 +127,30 @@
 				<br>				
 				
 				<h3>Pending Community Post</h3>
-			<?php
-				$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending'");
-				$rowcount = mysqli_num_rows($result);
 				
-				echo "<a href = 'Approval.php'><button class = 'rpt_btn' style = 'width: 300px;'><i class = '	fas fa-upload'></i>&nbsp;&nbsp;<b>".$rowcount." <br> Submissions</b></button></a>";
-			?>
-				<hr style = "border:2px solid silver;">
-						
-				<?PHP						
-					echo "<a href = 'AddTip.php'><button class = 'rpt_btn' style = 'width: 300px;'><i class = 'far fa-hand-point-right'></i>&nbsp;&nbsp;<b>Add Tips</b></button></a>";
+				<?php
+					$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending'");
+					$rowcount = mysqli_num_rows($result);
+					
+					echo "<a href = 'Community.php'><button class = 'rpt_btn' style = 'width: 300px;'><i class = '	fas fa-upload'></i>&nbsp;&nbsp;<b>".$rowcount." &nbsp; Submissions</b></button></a>";
+					echo "<a href = 'Tips.php'><button class = 'rpt_btn' style = 'width: 300px;'><i class = 'far fa-hand-point-right'></i>&nbsp;&nbsp;<b>Add Tips</b></button></a>";
 				?>
+			
+				<hr style = "border:2px solid silver;">
+				
+				<div style = "text-align:center;">
+				<?php
+					$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approve'");
+					$rowcount = mysqli_num_rows($result);
+					
+					echo "<button class = 'analysis'><b>Community Post<br>".$rowcount."</b></button>";
+					
+					$result2 = mysqli_query($connected,"select * FROM tips ");
+					$rowcount2 = mysqli_num_rows($result2);
+					
+					echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class = 'analysis'><b>Tips Posted<br>".$rowcount2."</b></button>";
+				?>
+				</div>
 			</div>
 		</div>
 	</body>
