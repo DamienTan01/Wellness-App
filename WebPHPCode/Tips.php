@@ -62,7 +62,7 @@
 			/* Style the input */
 			.wrap
 			{
-				width:75%;
+				width:90%;
 				margin-left:auto;
 				margin-right:auto;
 				background: white;
@@ -70,6 +70,19 @@
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 				border-radius:10px;
 			}
+			
+			.in-wrap
+			{
+				width:100%;
+				margin-left:auto;
+				margin-right:auto;
+				margin-bottom:20px;
+				background: white;
+				height:auto;
+				padding:20px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:10px;
+			}			
 			
 			.wrap .InputText 
 			{				
@@ -144,20 +157,36 @@
 			
 			table, th, td
 			{
-				border:solid 2px silver;
+				border:none;
 				border-collapse:collapse;
 				padding:10px;
 			}
 			
 			table
 			{
-				border:solid 2px silver;
 				width:100%;
 			}
 			
-			th
+			.tb_title
 			{
-				text-align:center;
+				text-align:left;
+			}
+			
+			.tb_image
+			{
+				width:250px;
+				border:solid 1px grey;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+			}
+			
+			.tb_publish
+			{
+				text-align:right;
+			}
+			
+			.tb_content
+			{
+				white-space: pre-line;
 			}
 			
 			.edit_btn			
@@ -193,6 +222,23 @@
 				resize: none;
 			}
 			
+			.uploadbtn
+			{
+				border: dashed grey 3px;
+				text-align: center;
+				text-decoration: none;
+				padding:10px;
+				border-radius:10px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+			}
+			
+			.uploadbtn:hover
+			{
+				background-color: #cccccc;
+				color: black;
+				transition:0.3s;
+			}
+			
 		</style>
 	</head>
 	
@@ -215,25 +261,50 @@
 				<div id = "Show" class = "tabcontent">
 					<div class = "wrap">					
 						<?php
-							$result = mysqli_query($connected,"select * FROM tips");
-
-							while($row = mysqli_fetch_array($result))
+							$result = mysqli_query($connected,"select * FROM tips order by tip_published DESC");
+							
+							$rowcount = mysqli_num_rows($result);
+							
+							if($rowcount == 0)
 							{								
-								echo $row['tip_id'];
-								echo "<br>";
-								echo $row['tip_title'];
-								echo "<br>";
-								echo $row['tip_content'];
-								echo "<br>";
-								echo $row['tip_media'];
-								echo "<br>";
-								echo $row['tip_published'];
-																							
-								echo "<td><center><button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['tip_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button></center></td>";
-								
-								echo "</tr>";
+								echo "<center><h3 style = 'font-size:25px;'><b>There is no Tip added</b></h3></center>";								
 							}
-							echo "</table>";
+							else
+							{	
+							
+							while($row = mysqli_fetch_array($result))
+							{
+						?>
+						<div class = "in-wrap">								
+						
+						<?php 							
+							echo "<table>";
+							
+								echo "<tr>";									
+									echo "<th colspan = 2 style = 'text-align:right;'><a href = 'tip_delete.php?id=".$row['tip_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'material-icons'>delete</i></button></a></th>";
+								echo "</tr>";
+							
+								echo "<tr>";									
+									echo "<th class = 'tb_title'  colspan = 2>" .$row['tip_title']. "</th>";
+								echo "</tr>";
+								
+								echo "<tr>";
+									echo '<td><img class = "tb_image" src = "upload/'.$row["tip_media"].'">';
+									echo '<td class = "tb_content" width = "80%">' .$row['tip_content']. '</td>';
+								echo "</tr>";						
+									
+								echo "<tr>";
+									echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['tip_published']. "</td>";
+								echo "</tr>";
+								
+							echo "</table>";																
+						?>
+						
+						</div>
+						
+						<?php
+							}
+							}
 						?>
 					</div>
 					
@@ -242,7 +313,7 @@
 
 				<div id = "Insert" class = "tabcontent">
 					<div class = "wrap">
-						<form method = "post" action = "tip_insert.php">
+						<form method = "POST" action = "tip_insert.php"  enctype = "multipart/form-data">
 							
 							<h1>Tip Details</h1>
 							
@@ -263,7 +334,7 @@
 										$value2 = $value2 + 1;
 										$value2 = sprintf('TIP%03u', $value2);
 										$value = $value2; 
-									}
+									}								
 								} 
 								else 
 								{
@@ -271,27 +342,21 @@
 								}
 							?>
 							
-								<input type = "text" id = "Tip_id" name = "Tip_id" value = "<?PHP echo $value; ?>" required maxlength = "6"/>
+								<input type = "text" id = "Tip_id" name = "Tip_id" value = "<?PHP echo $value; ?>" required />		
 							</div>
 							
-							<?php
+							<img id = "thumb" src = "icon/NoImage.png" width = "200px" />
+							<br>
+							<label>Select File to uploads : </label>
+							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()" required />												
 							
-							echo '<tr><td><form action="UploadFile.php" method="post" enctype="multipart/form-data">';
-							echo '<h2>Select File to uploads : </h2>
-
-								<input class = "uploadbtn" type = "file" name = "media" />
-								<br><br>
-								<input class = "submitbtn" type = "submit" name = "submit" value = "Upload" />
-							
-								</form></td></tr>';
-							
-							?>
-							
+							<br><br>
 							
 							<div class = "InputText">
 								<input class = "disabled" type = "text" value = "<?PHP echo $value; ?>" disabled />
 								<label style = "color:black;">ID (Prefixed)</label>
 							</div>
+							
 							<br><br>
 						
 							<div class = "InputText">
@@ -301,9 +366,8 @@
 							
 							<br><br>
 							
-
-								<label class = "InputText">Content</label><br>
-								<textarea name = "Tip_content" id = "Tip_content" onfocus = "this.value = ''; setbg('#E7EFFF');" onblur = "setbg('white')" required >Enter your content here...</textarea>
+							<label class = "InputText">Content (Please put '' when there is a apostrophe)</label><br>
+							<textarea name = "Tip_content" id = "Tip_content" onfocus = "setbg('#E7EFFF');" onblur = "setbg('white')" required placeholder = "Enter your content here..."></textarea>
 							
 							<br><br>
 							
@@ -339,6 +403,11 @@
 					function setbg(color)
 					{
 						document.getElementById("Tip_content").style.background=color
+					}
+					
+					function preview()
+					{
+						thumb.src = URL.createObjectURL(event.target.files[0]);
 					}
 				</script>
 			</div>

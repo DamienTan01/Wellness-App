@@ -101,7 +101,7 @@
 				width: 35%;
 				height: 200px;
 				font-family:Arial;
-				font-size:20px;
+				font-size:25px;
 				background-color: #A2BCF2;
 				border-radius:30px;
 				color:snow;
