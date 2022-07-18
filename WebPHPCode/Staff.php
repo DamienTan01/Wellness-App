@@ -62,7 +62,7 @@
 			/* Style the input */
 			.wrap
 			{
-				width:75%;
+				width:95%;
 				margin-left:auto;
 				margin-right:auto;
 				background: white;

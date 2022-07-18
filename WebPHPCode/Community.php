@@ -265,23 +265,32 @@
 					
 					<?php
 						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved'");
-
-						while($row = mysqli_fetch_array($result))
-						{	
-							echo "<ul style = 'list-style-type:none;'>";
-							echo "<li class = 'approve'>";
-							echo $row['com_id'];
-							echo "<br>";
-							echo $row['com_title'];
+						
+						$rowcount = mysqli_num_rows($result);
 							
-							echo "<br><br>";
-							
-							echo $row['com_published'];
-							echo "<br>";
-							echo $row['com_status'];
-							echo "<button class = 'edit_btn2'><a href = 'staff_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button>";
+						if($rowcount == 0)
+						{								
+							echo "<center><h3 style = 'font-size:25px;'><b>There is no Community Post Record</b></h3></center>";								
+						}
+						else
+						{						
+							while($row = mysqli_fetch_array($result))
+							{	
+								echo "<ul style = 'list-style-type:none;'>";
+								echo "<li class = 'approve'>";
+								echo $row['com_id'];
+								echo "<br>";
+								echo $row['com_title'];
+								
+								echo "<br><br>";
+								
+								echo $row['com_published'];
+								echo "<br>";
+								echo $row['com_status'];
+								echo "<button class = 'edit_btn2'><a href = 'staff_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button>";
 
-							echo "</li></ul>";
+								echo "</li></ul>";
+							}
 						}
 					?>
 				</div>

@@ -94,6 +94,7 @@
 				color: white;
 				transition:0.3s;
 				box-shadow:0 5px 10px #0080FF;
+				text-shadow:-0.5px 3px 10px black;
 			}
 			
 			.analysis
@@ -108,6 +109,7 @@
 				outline:none;
 				border:none;	
 				box-shadow:0 5px 10px rgba(0,0,0,0.5);
+				text-shadow:-0.5px 3px 5px black;
 			}
 			
 		</style>
