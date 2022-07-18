@@ -164,43 +164,63 @@
 			{
 				background-color: #A99CFF;
 				color: white;
+				width: 40px;
+				margin-right: 20px;
 				text-align: center;
 				text-decoration: none;
-				padding:10px;
-				border:none;
-				border-radius:30%;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-			}
-			
-			.material-icons
-			{
-				font-size:25px;
+				font-size: 20px;
+				padding: 10px;
+				border: none;
+				border-radius: 25%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			.edit_btn:hover
 			{
 				background-color: snow;
 				color: black;
-				transition:0.3s;
+				transition:0.5s;
 			}
 			
-			textarea
+			.approve
 			{
-				width: 100%;
-				height: 200px;
-				border: 2px solid #cccccc;
-				padding: 5px;
-				resize: none;
+				width: 75%;
+				margin-left: auto;
+				margin-right: auto;
+				background: white;
+				padding: 30px;
+				box-shadow: 0 0 0.8vw 0 rgba(0,0,0,0.2);
+				border-radius: 20px;
 			}
 			
+			.edit_btn2			
+			{
+				background-color: #A99CFF;
+				color: white;
+				float: right;
+				text-align: center;
+				text-decoration: none;
+				font-size: 20px;
+				padding: 10px;
+				border: none;
+				border-radius: 30%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			}
+			
+			.edit_btn2:hover
+			{
+				background-color: snow;
+				color: black;
+				transition:0.5s;
+			}
 		</style>
 	</head>
 	
 	<body>		
 		<div class = "content">
 			<div class = "con">
-				<button class = "tablink" onclick = "openPage('Show', this, 'snow')" id = "defaultOpen">Tips</button>
-				<button class = "tablink" onclick = "openPage('Insert', this, 'snow')">Add Tips</button>			
+				<button class = "tablink" onclick = "openPage('Show', this, 'snow')" id = "defaultOpen">Pending Approval</button>
+				<button class = "tablink" onclick = "openPage('Insert', this, 'snow')">Community</button>			
 
 				<span>
 					<?PHP
@@ -212,104 +232,58 @@
 					?>
 				</span>
 				
-				<div id = "Show" class = "tabcontent">
-					<div class = "wrap">					
-						<?php
-							$result = mysqli_query($connected,"select * FROM tips");
+				<div id = "Show" class = "tabcontent">					
+					<?php
+						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending'");
 
-							while($row = mysqli_fetch_array($result))
-							{								
-								echo $row['tip_id'];
-								echo "<br>";
-								echo $row['tip_title'];
-								echo "<br>";
-								echo $row['tip_content'];
-								echo "<br>";
-								echo $row['tip_media'];
-								echo "<br>";
-								echo $row['tip_published'];
-																							
-								echo "<td><center><button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['tip_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button></center></td>";
-								
-								echo "</tr>";
-							}
-							echo "</table>";
-						?>
-					</div>
-					
-					<br><br>			
+						while($row = mysqli_fetch_array($result))
+						{	
+							echo "<ul style = 'list-style-type:none;'>";
+							echo "<li class = 'approve'>";
+							echo $row['com_id'];
+							echo "<br>";
+							echo $row['com_title'];
+							echo "<br>";
+							echo $row['com_content'];
+							echo "<br>";
+							echo $row['com_media'];
+							echo "<br>";
+							echo $row['com_published'];
+							
+							echo "<br><br>";
+							
+							echo "<center><button class = 'edit_btn' id = 'com_app'><a href = 'Community_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
+							echo "<button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center>";
+
+							echo "</li></ul>";
+						}
+					?>
 				</div>
 
 				<div id = "Insert" class = "tabcontent">
-					<div class = "wrap">
-						<form method = "post" action = "tip_insert.php">
-							
-							<h1>Tip Details</h1>
-							
-							<hr style = "border-bottom:2px solid grey;">
-							
-							<div class = "InputText" style = "display:none;">
-							
-							<?PHP
-								$value2 = '';
-								$query = "SELECT tip_id from tips order by tip_id DESC LIMIT 1";
-								$stmt = mysqli_query($connected, $query);
-								if(mysqli_num_rows($stmt) > 0) 
-								{
-									if ($row = mysqli_fetch_assoc($stmt)) 
-									{
-										$value2 = $row['tip_id'];
-										$value2 = substr($value2, 3, 5);
-										$value2 = $value2 + 1;
-										$value2 = sprintf('TIP%03u', $value2);
-										$value = $value2; 
-									}
-								} 
-								else 
-								{
-									$value = "TIP001";
-								}
-							?>
-							
-								<input type = "text" id = "Tip_id" name = "Tip_id" value = "<?PHP echo $value; ?>" required maxlength = "6"/>
-							</div>
-							
-							<?php
-							
-							echo '<tr><td><form action="UploadFile.php" method="post" enctype="multipart/form-data">';
-							echo '<h2>Select File to uploads : </h2>
+					<h1>Post List</h1>
+					
+					<?php
+						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved'");
 
-								<input class = "uploadbtn" type = "file" name = "media" />
-								<br><br>
-								<input class = "submitbtn" type = "submit" name = "submit" value = "Upload" />
+						while($row = mysqli_fetch_array($result))
+						{	
+							echo "<ul style = 'list-style-type:none;'>";
+							echo "<li class = 'approve'>";
+							echo $row['com_id'];
+							echo "<br>";
+							echo $row['com_title'];
 							
-								</form></td></tr>';
+							echo "<br><br>";
 							
-							?>
-							
-							
-							<div class = "InputText">
-								<input class = "disabled" type = "text" value = "<?PHP echo $value; ?>" disabled />
-								<label style = "color:black;">ID (Prefixed)</label>
-							</div>
-							<br><br>
-						
-							<div class = "InputText">
-								<input type = "text" name = "Tip_title" id = "Tip_title" required />
-								<label>Title</label>
-							</div>
-							
-							<br><br>
-							
+							echo $row['com_published'];
+							echo "<br>";
+							echo $row['com_status'];
+							echo "<button class = 'edit_btn2'><a href = 'staff_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button>";
 
-								<label class = "InputText">Content</label><br>
-								<textarea name = "Tip_content" id = "Tip_content" onfocus = "this.value = ''; setbg('#E7EFFF');" onblur = "setbg('white')" required >Enter your content here...</textarea>
-							
-							<br><br>
-							
-							<button type = "submit" class = "submit" name = "addTip"> Submit </button>
-						</div>
-					</form>
+							echo "</li></ul>";
+						}
+					?>
 				</div>
 				
 				<script>

@@ -140,7 +140,7 @@
 				
 				<div style = "text-align:center;">
 				<?php
-					$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approve'");
+					$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved'");
 					$rowcount = mysqli_num_rows($result);
 					
 					echo "<button class = 'analysis'><b>Community Post<br>".$rowcount."</b></button>";
