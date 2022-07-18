@@ -28,7 +28,7 @@
         <style>
             body 
 			{
-                background: linear-gradient(-30deg, #2B6AC3, #6998CC, #A3D7F9, #D3F3FF, #FEFE75, #F6DD40);
+                background: linear-gradient(-30deg, #2B6AC3, #6998CC, #A3D7F9, #E3D9FF, #9A7BF7);
 				background-size: 500% 500%;
 				animation: gradient 8s ease infinite;
 				font-family: Gill Sans MT;

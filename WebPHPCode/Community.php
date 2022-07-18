@@ -1,5 +1,5 @@
 <?PHP
-	//Staff.php
+	//Community.php
 	
 	include('header.php');
 	
@@ -13,7 +13,7 @@
 
 <html>
 	<head>
-		<title> - Admin Management - </title>		
+		<title> - Community Management - </title>		
 		
 		<style>
 			.con
@@ -184,6 +184,14 @@
 				transition:0.3s;
 			}
 			
+			textarea
+			{
+				width: 100%;
+				height: 200px;
+				border: 2px solid #cccccc;
+				padding: 5px;
+				resize: none;
+			}
 			
 		</style>
 	</head>
@@ -191,10 +199,9 @@
 	<body>		
 		<div class = "content">
 			<div class = "con">
-				<button class = "tablink" onclick = "openPage('Show', this, 'snow')" id = "defaultOpen">Admin List</button>
-				<button class = "tablink" onclick = "openPage('Insert', this, 'snow')">Register Admin</button>			
-				<br>
-				
+				<button class = "tablink" onclick = "openPage('Show', this, 'snow')" id = "defaultOpen">Tips</button>
+				<button class = "tablink" onclick = "openPage('Insert', this, 'snow')">Add Tips</button>			
+
 				<span>
 					<?PHP
 						if(isset($_SESSION['message']))
@@ -205,41 +212,28 @@
 					?>
 				</span>
 				
-				<div id="Show" class="tabcontent">
-					<div class = "wrap">
-					
-					<h2>Admins</h2>
-					
+				<div id = "Show" class = "tabcontent">
+					<div class = "wrap">					
 						<?php
-							$result = mysqli_query($connected,"select * FROM users WHERE user_type = 'Admin'");
-
-							echo "<table class = 'shown'>
-							<tr>
-								<th width='5%'>ID</th>
-								<th width='15%'>Username</th>
-								<th width='15%'>Email</th>
-								<th width='15%'>Name</th>
-								<th width='10%'>Date of Birth</th>
-								<th width='10%'>Gender</th>
-								<th width='5%' colspan = '2'>Action</th>
-							</tr>";
+							$result = mysqli_query($connected,"select * FROM tips");
 
 							while($row = mysqli_fetch_array($result))
-							{
-								echo "<tr>";
-								echo "<td width='20px'>" . $row['user_id'] . "</td>";
-								echo "<td>" . $row['username'] . "</td>";
-								echo "<td>" . $row['email'] . "</td>";
-								echo "<td>" . $row['name'] . "</td>";
-								echo "<td>" . $row['dob'] . "</td>";
-								echo "<td>" . $row['gender'] . "</td>";
+							{								
+								echo $row['tip_id'];
+								echo "<br>";
+								echo $row['tip_title'];
+								echo "<br>";
+								echo $row['tip_content'];
+								echo "<br>";
+								echo $row['tip_media'];
+								echo "<br>";
+								echo $row['tip_published'];
 																							
-								echo "<td><center><button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['user_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button></center></td>";
+								echo "<td><center><button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['tip_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button></center></td>";
 								
 								echo "</tr>";
 							}
 							echo "</table>";
-					  
 						?>
 					</div>
 					
@@ -248,9 +242,9 @@
 
 				<div id = "Insert" class = "tabcontent">
 					<div class = "wrap">
-						<form method = "post" action = "staff_insert.php">
+						<form method = "post" action = "tip_insert.php">
 							
-							<h1>Admin Details</h1>
+							<h1>Tip Details</h1>
 							
 							<hr style = "border-bottom:2px solid grey;">
 							
@@ -258,28 +252,41 @@
 							
 							<?PHP
 								$value2 = '';
-								$query = "SELECT user_id from users order by user_id DESC LIMIT 1";
+								$query = "SELECT tip_id from tips order by tip_id DESC LIMIT 1";
 								$stmt = mysqli_query($connected, $query);
 								if(mysqli_num_rows($stmt) > 0) 
 								{
 									if ($row = mysqli_fetch_assoc($stmt)) 
 									{
-										$value2 = $row['user_id'];
+										$value2 = $row['tip_id'];
 										$value2 = substr($value2, 3, 5);
 										$value2 = $value2 + 1;
-										$value2 = sprintf('ADM%03u', $value2);
+										$value2 = sprintf('TIP%03u', $value2);
 										$value = $value2; 
 									}
 								} 
 								else 
 								{
-									$value2 = "ADM001";
-									$value = $value2;
+									$value = "TIP001";
 								}
 							?>
 							
-								<input type = "text" id = "User_ID" name = "User_ID" value = "<?PHP echo $value; ?>" required maxlength = "6"/>
+								<input type = "text" id = "Tip_id" name = "Tip_id" value = "<?PHP echo $value; ?>" required maxlength = "6"/>
 							</div>
+							
+							<?php
+							
+							echo '<tr><td><form action="UploadFile.php" method="post" enctype="multipart/form-data">';
+							echo '<h2>Select File to uploads : </h2>
+
+								<input class = "uploadbtn" type = "file" name = "media" />
+								<br><br>
+								<input class = "submitbtn" type = "submit" name = "submit" value = "Upload" />
+							
+								</form></td></tr>';
+							
+							?>
+							
 							
 							<div class = "InputText">
 								<input class = "disabled" type = "text" value = "<?PHP echo $value; ?>" disabled />
@@ -288,27 +295,19 @@
 							<br><br>
 						
 							<div class = "InputText">
-								<input type = "text" name = "Username" id = "Username" required />
-								<label>Username</label>
+								<input type = "text" name = "Tip_title" id = "Tip_title" required />
+								<label>Title</label>
 							</div>
 							
 							<br><br>
 							
-							<div class = "InputText">
-								<input type = "text" name = "User_email" id = "User_email" required />
-								<label>Email Address</label>
-							</div>
+
+								<label class = "InputText">Content</label><br>
+								<textarea name = "Tip_content" id = "Tip_content" onfocus = "this.value = ''; setbg('#E7EFFF');" onblur = "setbg('white')" required >Enter your content here...</textarea>
 							
 							<br><br>
 							
-							<div class = "InputText">
-								<input type = "password" name = "User_pwd" id = "User_pwd" required />
-								<label>Password</label>
-							</div>
-							
-							<br><br>
-							
-							<button type = "submit" class = "submit" name = "insertAdmin"> ADD </button>
+							<button type = "submit" class = "submit" name = "addTip"> Submit </button>
 						</div>
 					</form>
 				</div>
@@ -335,7 +334,12 @@
 						elmnt.style.backgroundColor = color;
 					}
 
-					document.getElementById("defaultOpen").click();			
+					document.getElementById("defaultOpen").click();
+					
+					function setbg(color)
+					{
+						document.getElementById("Tip_content").style.background=color
+					}
 				</script>
 			</div>
 		</div>
