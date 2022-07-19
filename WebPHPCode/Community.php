@@ -231,21 +231,7 @@
 				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
-			.edit_btn2			
-			{
-				background-color: #A99CFF;
-				color: white;
-				float: right;
-				text-align: center;
-				text-decoration: none;
-				font-size: 20px;
-				padding: 10px;
-				border: none;
-				border-radius: 25%;
-				box-shadow: 0 0 10px rgba(0,0,0,0.2);
-			}
-			
-			.edit_btn:hover, edit_btn2:hover
+			.edit_btn:hover
 			{
 				background-color: snow;
 				color: black;
@@ -369,8 +355,7 @@
 								echo "<table>";
 							
 								echo "<tr>";
-									echo "<th colspan = 2 style = 'text-align:right;'><button class = 'edit_btn' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
-									echo "<a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn2'><i class = 'fa fa-trash'></i></button></a></th>";
+									echo "<th colspan = 2 style = 'text-align:right;'><a href = 'com_show.php?id=".$row['com_id']."'><button class = 'edit_btn' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
 								echo "</tr>";
 							
 								echo "<tr>";									
@@ -383,10 +368,6 @@
 								
 								echo "<tr>";
 									echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
-								echo "</tr>";
-								
-								echo "<tr>";
-									echo "<td class = 'tb_status' colspan = 2> Status : " .$row['com_status']. "</td>";
 								echo "</tr>";
 								
 							echo "</table>";																
@@ -416,63 +397,6 @@
 							
 						<input type = "submit" class = "submit">
 						<button type = "reset" class = "cancel" onclick = "off()">Cancel</button>
-					</form>
-				</div>
-				</div>
-				
-				<div id = "overlay2" class = "overlay2">
-				<div class = "wrap" style = "text-align:center; width:100%;">
-					<form method = "post" action = "com_insert.php">
-						<h2>Post</h2>
-						
-						<hr style = "border-bottom:2px solid grey;">
-						
-						<?php
-							$result = mysqli_query($connected,"select * FROM community WHERE com_id = ");
-						
-							while($row = mysqli_fetch_array($result))
-							{	
-						?>
-						<div class = "in-wrap">								
-						
-					<?php 							
-								echo "<table>";
-								
-								echo "<tr>";
-									echo "<th colspan = 2 style = 'text-align:right;'><button class = 'edit_btn' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
-									echo "<a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn2'><i class = 'fa fa-trash'></i></button></a></th>";
-								echo "</tr>";
-							
-								echo "<tr>";									
-									echo "<th class = 'tb_title'  colspan = 2>" .$row['com_title']. "</th>";
-								echo "</tr>";
-									
-								echo "<tr>";									
-									echo "<td class = 'tb_content'><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";
-								echo "</tr>";
-								
-								echo "<tr>";
-									echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
-								echo "</tr>";
-								
-								echo "<tr>";
-									echo "<td class = 'tb_status' colspan = 2> Status : " .$row['com_status']. "</td>";
-								echo "</tr>";
-									
-								echo "</table>";																
-						?>
-						
-						</div>
-						
-					<?php
-							}
-						}
-					?>
-							
-						<br><br>
-							
-						<input type = "submit" class = "submit">
-						<button type = "reset" class = "cancel" onclick = "off2()">Cancel</button>
 					</form>
 				</div>
 				</div>
@@ -514,16 +438,6 @@
 					function off() 
 					{
 						document.getElementById("overlay").style.display = "none";
-					}
-					
-					function on2() 
-					{
-						document.getElementById("overlay2").style.display = "block";
-					}
-
-					function off2() 
-					{
-						document.getElementById("overlay2").style.display = "none";
 					}
 				</script>
 			</div>
