@@ -289,7 +289,7 @@
 								echo "</tr>";
 								
 								echo "<tr>";
-									echo '<td><img class = "tb_image" src = "upload/'.$row["tip_media"].'">';
+									echo '<td><img class = "tb_image" src = "upload/'.$row["tip_media"].'"></td>';
 									echo '<td class = "tb_content" width = "80%">' .$row['tip_content']. '</td>';
 								echo "</tr>";						
 									

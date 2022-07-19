@@ -71,6 +71,19 @@
 				border-radius:10px;
 			}
 			
+			.in-wrap
+			{
+				width:100%;
+				margin-left:auto;
+				margin-right:auto;
+				margin-bottom:20px;
+				background: white;
+				height:auto;
+				padding:20px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:10px;
+			}	
+			
 			.wrap .InputText 
 			{				
 				height:75px;
@@ -111,7 +124,7 @@
 				transform: translateY(-40px);
 				transition:all 0.3s ease;
 				color:black;
-				outline:none;				
+				outline:none;
 			}
 			
 			.wrap .InputText .underline
@@ -213,6 +226,32 @@
 				color: black;
 				transition:0.5s;
 			}
+			
+			.add_btn			
+			{
+				background-color: #83C2FF;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+				padding:10px;
+				border:none;
+				border-radius:50%;
+				opacity:50%;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+			}
+			
+			.material-icons
+			{
+				font-size:25px;
+				font-weight:bold;
+			}
+			
+			.add_btn:hover
+			{
+				box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+				opacity:1;
+				transition:0.3s;
+			}
 		</style>
 	</head>
 	
@@ -232,32 +271,55 @@
 					?>
 				</span>
 				
-				<div id = "Show" class = "tabcontent">					
+				<div id = "Show" class = "tabcontent">	
+					<div class = "wrap">
+						<button class = 'add_btn' style = "float:right;" onclick = "on()"><i class = 'material-icons'>add</i></button>
+
+					
 					<?php
-						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending'");
+						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");
 
 						while($row = mysqli_fetch_array($result))
 						{	
-							echo "<ul style = 'list-style-type:none;'>";
-							echo "<li class = 'approve'>";
-							echo $row['com_id'];
-							echo "<br>";
-							echo $row['com_title'];
-							echo "<br>";
-							echo $row['com_content'];
-							echo "<br>";
-							echo $row['com_media'];
-							echo "<br>";
-							echo $row['com_published'];
+					
+					?>
+						<div class = "in-wrap">
+					<?php							
+						echo "<table>";
 							
-							echo "<br><br>";
+							echo "<tr>";									
+								echo "<th class = 'tb_title'  colspan = 2>" .$row['com_title']. "</th>";
+							echo "</tr>";
 							
-							echo "<center><button class = 'edit_btn' id = 'com_app'><a href = 'Community_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
-							echo "<button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center>";
-
+							echo "<tr>";
+								if($row['com_media'] == NULL)
+								{
+									echo '<td class = "tb_image">No Media Uploaded</td>';
+								}
+								else
+								{
+									echo '<td><img class = "tb_content" src = "upload/'.$row["com_media"].'"></td>';
+								}	
+								echo '<td class = "tb_content" width = "80%">' .$row['com_content']. '</td>';
+								
+							echo "</tr>";						
+								
+							echo "<tr>";
+								echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
+							echo "</tr>";
+							
+						echo "</table>";	
+						
+						
+						echo "<center><button class = 'edit_btn' id = 'com_app'><a href = 'com_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
+						echo "<button class = 'edit_btn'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center>";
 							echo "</li></ul>";
+					?>
+						</div>
+					<?php
 						}
 					?>
+					</div>
 				</div>
 
 				<div id = "Insert" class = "tabcontent">
