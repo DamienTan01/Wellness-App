@@ -7,11 +7,17 @@
 	{
 		$delete_id = $_GET['id'];
 		
-		$query = "DELETE FROM comment WHERE commentID = '".$delete_id."'";
+		$query = "SELECT com_id FROM comment WHERE commentID = '".$delete_id."'";
+		$result = mysqli_query($connected, $query);
+		$row = mysqli_fetch_array($result);
 		
-		if(mysqli_query($connected,$query))
+		$COM_ID = $row['com_id'];
+		
+		$query2 = "DELETE FROM comment WHERE commentID = '".$delete_id."'";
+		
+		if(mysqli_query($connected,$query2))
 		{
-			header("location:com_show.php?st=Deleted");
+			header("location:com_show.php?id=$COM_ID");
 		} 
 		else 
 		{

@@ -9,10 +9,8 @@
 	
 		$COM_ID 	= $_GET['id'];
 		
-		$query = "SELECT * FROM community WHERE com_id = '$COM_ID'";
-		
-		$result = mysqli_query($connected, $query);
-		
+		$query = "SELECT * FROM community WHERE com_id = '$COM_ID'";		
+		$result = mysqli_query($connected, $query);		
 		$row = mysqli_fetch_array($result);
 		
 		$ID 		= $row['com_id'];
@@ -58,24 +56,9 @@
 				font-weight:bold;
 			}
 			
-			h3
-			{
-				margin-left:20px;
-				text-align:center;
-				width: 150px;
-				padding:10px;
-				font-family:Times New Roman;
-				font-size:25px;
-				background-color: #85BAFF;
-				color:white;
-				border-radius:10px 0 20px;
-				border:none;
-				font-weight:bold;
-			}
-			
 			table, th, td
 			{
-				border:solid 2px silver;
+				border:none;
 				border-collapse:collapse;
 				padding:5px;
 				text-align:center;
@@ -83,7 +66,7 @@
 			
 			table
 			{
-				border:solid 2px silver;
+				border:none;
 				width:100%;
 				font-size:20px;
 			}
@@ -102,7 +85,7 @@
 						
 			.tb_publish
 			{
-				text-align:right;
+				text-align:left;
 			}
 			
 			.tb_status
@@ -113,6 +96,9 @@
 			.tb_content
 			{
 				white-space: pre-line;
+				text-align:left;
+				padding:20px;
+				vertical-align:top;
 			}
 			
 			.wrap
@@ -122,6 +108,28 @@
 				background:snow;
 				padding:20px;							
 				box-shadow:0 0 10px rgba(0,0,0,0.2);				
+			}
+			
+			.in-wrap, in-wrap2
+			{
+				width:100%;
+				margin-left:auto;
+				margin-right:auto;
+				margin-bottom:20px;
+				background-image: linear-gradient(10deg, #E8E9FF, snow);
+				height:auto;
+				padding:20px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:10px;
+			}
+			
+			.in-wrap2
+			{
+				background-image: linear-gradient(35deg, #C6C8E3, white);
+				height:auto;
+				padding:20px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:10px;
 			}
 			
 			.wrap .InputText 
@@ -244,26 +252,61 @@
 			
 			<br>
 			
-			<div class = "in-wrap">						
+			<div class = "in-wrap">
 			<?php 							
 				echo "<table>";
 							
 					echo "<tr>";
-						echo "<th style = 'text-align:right;' colspan = 2><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'fa fa-trash'></i></button></a></th>";
+						echo "<td class = 'tb_publish'> Published on : " .$row['com_published']. "</td>";
+						echo "<td style = 'text-align:right;'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'fa fa-trash'></i></button></a></td>";
 					echo "</tr>";
 								
 					echo "<tr>";									
-						echo "<td class = 'tb_content'><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";
+						echo "<td><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";	
+						echo "<td width = '65%' class = 'tb_content'>" .$row['com_content']. "</td>";
 					echo "</tr>";
-								
-					echo "<tr>";
-						echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
-					echo "</tr>";				
 				
-				echo "</table>";																
-			?>					
-				
+				echo "</table>";
+			?>				
 			</div>
+			
+			<div class = "in-wrap2">
+			<?php
+				$result2 = mysqli_query($connected,"select * FROM comment WHERE com_id = '$COM_ID'");
+						
+						$rowcount = mysqli_num_rows($result2);
+							
+						if($rowcount == 0)
+						{								
+							echo "<center><h3 style = 'font-size:25px;'><b>There is No Comment Yet</b></h3></center>";
+						}
+						else
+						{						
+							while($row2 = mysqli_fetch_array($result2))
+							{
+			?>			
+				<br>
+				<div class = "in-wrap2">
+			<?php
+								echo "<table>";								
+									echo "<tr>";
+										$USER = $row2['user_id'];
+
+										$result3 = mysqli_query($connected,"select * FROM users WHERE user_id = '$USER'");
+										$row3 = mysqli_fetch_array($result3);
+										
+										echo "<td width = '10%'>" .$row3['username']. "</td>";
+										echo "<td style = 'text-align:left;'>" .$row2['content']. "</td>";
+										echo "<td width = '10%' style = 'text-align:right;'><a href = 'comment_delete.php?id=".$row2['commentID']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'fa fa-trash'></i></button></a></td>";
+									echo "</tr>";
+								echo "</table>";
+			?>
+				</div>				
+			<?php
+							}
+						}
+			?>				
+			
 		
 	<script>		
 		function on() 
