@@ -49,7 +49,8 @@
 				background-color: snow;
 				padding:20px;
 				padding-top: 70px;
-				box-shadow: 5px 5px 10px rgba(0,0,0,0.5);				
+				box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+				text-align:center;
 			}
 			
 			h1
@@ -135,7 +136,7 @@
 				width:100%;				
 			}				
 				
-			.submit
+			.submit, .cancel
 			{
 				background-color: white;
 				color: black;
@@ -155,9 +156,30 @@
 				transition:0.3s;
 			}
 			
+			.cancel:hover
+			{
+				background-color:red;
+				color: white;
+				transition:0.3s;
+			}
+			
+			#overlay
+			{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width:60%;
+				transform:translate(-50%, -50%);
+				border: 2px solid black;
+				box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+				display: none;
+				
+				z-index: 1000;
+			}			
+			
 			table, th, td
 			{
-				border:solid 2px silver;
+				border:none;
 				border-collapse:collapse;
 				padding:10px;
 			}
@@ -235,13 +257,11 @@
 				text-decoration: none;
 				padding:10px;
 				border:none;
-				border-radius:50%;
+				width:250px;
+				height:50px;
+				border-radius:5px;
 				opacity:50%;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
-			}
-			
-			.material-icons
-			{
 				font-size:25px;
 				font-weight:bold;
 			}
@@ -272,9 +292,9 @@
 				</span>
 				
 				<div id = "Show" class = "tabcontent">	
-					<div class = "wrap">
-						<button class = 'add_btn' style = "float:right;" onclick = "on()"><i class = 'material-icons'>add</i></button>
-
+						<button class = 'add_btn' style = "text-align:center;" onclick = "on()"><i class = 'fas fa-plus'></i> Add Post </button>
+						
+						<br><br>
 					
 					<?php
 						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");
@@ -305,21 +325,21 @@
 							echo "</tr>";						
 								
 							echo "<tr>";
-								echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
+								echo "<td class = 'tb_publish'> Published on : " .$row['com_published']. "</td>";
+								echo "<td> Published by : " .$row['user_id']. "</td>";
 							echo "</tr>";
 							
-						echo "</table>";	
-						
-						
-						echo "<center><button class = 'edit_btn' id = 'com_app'><a href = 'com_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
-						echo "<button class = 'edit_btn'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center>";
-							echo "</li></ul>";
+							echo "<tr>";
+								echo "<td colspan = 2><center><button class = 'edit_btn' id = 'com_app'><a href = 'com_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
+								echo "<button class = 'edit_btn'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center></td>";
+							echo "</tr>";
+							
+						echo "</table>";
 					?>
 						</div>
 					<?php
 						}
 					?>
-					</div>
 				</div>
 
 				<div id = "Insert" class = "tabcontent">
@@ -357,6 +377,25 @@
 					?>
 				</div>
 				
+				
+				<!-- Overlay Add Community Post -->
+				<div id = "overlay" class = "overlay">
+				<div class = "wrap" style = "text-align:center; width:100%;">
+					<form method = "post" action = "com_insert.php">
+						<h2>Create Community</h2>
+							 
+						<hr style = "border-bottom:2px solid grey;">
+						
+						
+							
+						<br><br>
+							
+						<input type = "submit" class = "submit">
+						<button type = "reset" class = "cancel" onclick = "off()">Cancel</button>
+					</form>
+				</div>
+				</div>				
+				
 				<script>
 					function openPage(pageName,elmnt,color) 
 					{
@@ -384,6 +423,16 @@
 					function setbg(color)
 					{
 						document.getElementById("Tip_content").style.background=color
+					}
+					
+					function on() 
+					{
+						document.getElementById("overlay").style.display = "block";
+					}
+
+					function off() 
+					{
+						document.getElementById("overlay").style.display = "none";
 					}
 				</script>
 			</div>

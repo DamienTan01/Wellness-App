@@ -77,7 +77,7 @@
 				margin-left:auto;
 				margin-right:auto;
 				margin-bottom:20px;
-				background: white;
+				background-image: linear-gradient(35deg, #E8E9FF, snow);
 				height:auto;
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
