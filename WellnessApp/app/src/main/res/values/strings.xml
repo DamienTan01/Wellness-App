@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Wellness App</string>
+    <string name="signup">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="logo">logo</string>
+    <string name="pass">Password</string>
+    <string name="email">Email</string>
+    <string name="cfmPass">Confirm Password</string>
+    <string name="button">button</string>
+</resources>
