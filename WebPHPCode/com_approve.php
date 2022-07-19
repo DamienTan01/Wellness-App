@@ -1,5 +1,5 @@
 <?PHP
-	//Community_approve.php
+	//com_approve.php
 	
 	include("connect.php");	
 	session_start();
