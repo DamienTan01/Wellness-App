@@ -37,7 +37,7 @@
 				padding:5px;				
 				height:100%;
 				padding-top:6%;
-				font-size:20px;
+				font-size:16px;
 				font-family:georgia,garamond,serif;
 				
 				background-image: url(icon/background.png);
@@ -80,7 +80,7 @@
 				position:fixed;
 				height:10%;
 				width:100%;
-				font-size:20px;
+				font-size:18px;
 				padding:13px;
 				box-shadow: 0 0 10px rgba(0,0,0,0.5);
 				

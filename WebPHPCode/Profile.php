@@ -77,7 +77,7 @@
 				background:snow;
 				border:none;
 				border-bottom:2px solid silver;
-				font-size:20px;
+				font-size:16px;
 				outline:none;
 			}
 			
@@ -100,7 +100,7 @@
 			
 			.wrap .InputText label
 			{
-				font-size:20px;
+				font-size:16px;
 				position:absolute;
 				bottom:10px;
 				left:0;

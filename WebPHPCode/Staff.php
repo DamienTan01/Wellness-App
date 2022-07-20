@@ -27,6 +27,7 @@
 			
 			.tablink 
 			{
+				font-weight:bold;
 				background-color: #CCC5FF;
 				color: black;
 				float: left;
@@ -40,6 +41,7 @@
 			{
 				background-color: #E6E3FF;
 				transition:0.3s;
+				text-shadow:-0.5px 1px black;
 			}		
 
 			/* Style the tab content */
@@ -85,7 +87,7 @@
 				border:none;
 				background-color:white;
 				border-bottom:2px solid silver;
-				font-size:20px;
+				font-size:16px;
 				outline:none;
 			}
 			
@@ -99,7 +101,7 @@
 			
 			.wrap .InputText label
 			{
-				font-size:20px;
+				font-size:16px;
 				position:absolute;
 				bottom:10px;
 				left:0;
@@ -124,10 +126,10 @@
 				
 			.submit
 			{
-				background-color: white;
+				background-color: #E8E9FF;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:20px;
+				font-size:18px;
 				text-align: center;
 				text-decoration: none;
 				padding: 10px 120px;
@@ -285,21 +287,21 @@
 								<input class = "disabled" type = "text" value = "<?PHP echo $value; ?>" disabled />
 								<label style = "color:black;">ID (Prefixed)</label>
 							</div>
-							<br><br>
+							<br>
 						
 							<div class = "InputText">
 								<input type = "text" name = "Username" id = "Username" required />
 								<label>Username</label>
 							</div>
 							
-							<br><br>
+							<br>
 							
 							<div class = "InputText">
 								<input type = "text" name = "User_email" id = "User_email" required />
 								<label>Email Address</label>
 							</div>
 							
-							<br><br>
+							<br>
 							
 							<div class = "InputText">
 								<input type = "password" name = "User_pwd" id = "User_pwd" required />

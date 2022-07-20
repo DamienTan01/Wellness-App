@@ -27,6 +27,7 @@
 			
 			.tablink 
 			{
+				font-weight:bold;
 				background-color: #CCC5FF;
 				color: black;
 				float: left;
@@ -40,6 +41,7 @@
 			{
 				background-color: #E6E3FF;
 				transition:0.3s;
+				text-shadow:-0.5px 1px black;
 			}		
 
 			/* Style the tab content */

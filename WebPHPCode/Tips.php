@@ -27,6 +27,7 @@
 			
 			.tablink 
 			{
+				font-weight:bold;
 				background-color: #CCC5FF;
 				color: black;
 				float: left;
@@ -40,6 +41,7 @@
 			{
 				background-color: #E6E3FF;
 				transition:0.3s;
+				text-shadow:-0.5px 1px black;
 			}		
 
 			/* Style the tab content */
@@ -98,7 +100,7 @@
 				border:none;
 				background-color:white;
 				border-bottom:2px solid silver;
-				font-size:20px;
+				font-size:18px;
 				outline:none;
 			}
 			
@@ -112,7 +114,7 @@
 			
 			.wrap .InputText label
 			{
-				font-size:20px;
+				font-size:18px;
 				position:absolute;
 				bottom:10px;
 				left:0;
@@ -140,7 +142,7 @@
 				background-color: white;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:20px;
+				font-size:18px;
 				text-align: center;
 				text-decoration: none;
 				padding: 10px 120px;
@@ -350,21 +352,21 @@
 							<label>Select File to uploads : </label>
 							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()" required />												
 							
-							<br><br>
+							<br>
 							
 							<div class = "InputText">
 								<input class = "disabled" type = "text" value = "<?PHP echo $value; ?>" disabled />
 								<label style = "color:black;">ID (Prefixed)</label>
 							</div>
 							
-							<br><br>
+							<br>
 						
 							<div class = "InputText">
 								<input type = "text" name = "Tip_title" id = "Tip_title" required />
 								<label>Title</label>
 							</div>
 							
-							<br><br>
+							<br>
 							
 							<label class = "InputText">Content (Please put '' when there is a apostrophe)</label><br>
 							<textarea name = "Tip_content" id = "Tip_content" onfocus = "setbg('#E7EFFF');" onblur = "setbg('white')" required placeholder = "Enter your content here..."></textarea>
