@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2022 at 02:28 PM
+-- Generation Time: Jul 20, 2022 at 03:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `ach_records` (
   `record_id` int(11) NOT NULL,
   `user_id` varchar(6) NOT NULL,
-  `ach_name` varchar(50) NOT NULL,
-  `act_id` varchar(6) NOT NULL
+  `ach_id` varchar(6) NOT NULL,
+  `ach_status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -80,7 +80,10 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`commentID`, `com_id`, `user_id`, `content`) VALUES
-(18, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+(18, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
+(19, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
+(20, '000005', 'ADM001', 'No please'),
+(21, '000006', 'ADM001', 'Okay, good.');
 
 -- --------------------------------------------------------
 
@@ -104,9 +107,12 @@ CREATE TABLE `community` (
 --
 
 INSERT INTO `community` (`com_id`, `com_title`, `com_content`, `com_media`, `com_published`, `com_like`, `com_status`, `user_id`) VALUES
-('000002', 'Celebrity', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbb', 'celebrity.png', '2022-07-18 05:55:54', 0, 'Approved', 'USR000'),
-('000003', 'Testing Community', 'Testing 123... Approve pending please... Thank you!', 'Testing.png', '2022-07-18 06:47:29', 0, 'Approved', 'USR000'),
-('000004', 'Bad day ever', 'Once upon a time,\r\n\r\nMarry found her lovely prince outside the castle.\r\n\r\nShe wanted to marry him but got rejected.', 'Badday.png', '2022-07-18 19:22:15', 0, 'Approved', 'USR000');
+('000001', 'Im on my way ~', 'Road to radiant\r\nRadiant, wait for me !!!', '9768_Radiant_Valorant.png', '2022-07-18 13:20:54', 0, 'Pending', 'ADM001'),
+('000002', 'Celebrity', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbb', 'celebrity.png', '2022-07-18 13:55:54', 0, 'Approved', 'USR000'),
+('000003', 'Testing Community', 'Testing 123... Approve pending please... Thank you!', 'Testing.png', '2022-07-18 14:47:29', 0, 'Approved', 'USR000'),
+('000004', 'Bad day ever', 'Once upon a time,\r\n\r\nMarry found her lovely prince outside the castle.\r\n\r\nShe wanted to marry him but got rejected.', 'Badday.png', '2022-07-19 03:22:15', 0, 'Approved', 'USR000'),
+('000005', 'Bad day ever 2', 'However, the prince said that if the princess could give him diamonds, he might think about the marriage.\r\n\r\nPrincess could not find any diamond in her country.\r\n\r\nShe felt very disappointed so she decided to suicide.\r\n\r\nWhat a bad day...', 'Badday.png', '2022-07-19 03:40:10', 0, 'Pending', 'ADM000'),
+('000006', 'Loading...', 'Have a good night', 'banner.gif', '2022-07-20 13:06:34', 0, 'Approved', 'ADM001');
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,7 @@ CREATE TABLE `records` (
 CREATE TABLE `tips` (
   `tip_id` varchar(6) NOT NULL,
   `tip_title` varchar(255) NOT NULL,
-  `tip_content` longtext NOT NULL,
+  `tip_content` text NOT NULL,
   `tip_media` text DEFAULT NULL,
   `tip_published` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -141,6 +147,7 @@ CREATE TABLE `tips` (
 --
 
 INSERT INTO `tips` (`tip_id`, `tip_title`, `tip_content`, `tip_media`, `tip_published`) VALUES
+('TIP000', 'Test Tip', 'asdjfhlasd fljadsh flj ahsdlfkjh df', NULL, '2022-07-18 03:49:08'),
 ('TIP001', 'Sha', 'Shy shy shy', '샤_bgr_2.jpg', '2022-07-19 03:03:38'),
 ('TIP002', 'Test Tip2', 'AHHHHHHHHHHHHH', '샤_bgr_1.jpg', '2022-07-19 03:23:33'),
 ('TIP003', 'Alcohol Free Tip', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.', 'image1.jpg', '2022-07-19 03:23:54'),
@@ -169,8 +176,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_type`, `username`, `name`, `dob`, `gender`, `email`, `password`) VALUES
-('ADM000', 'Admin', 'Joey', 'Ying Jie', '2001-04-19', 'F', 'crazyjoeyooi@gmail.com', '123456 '),
-('ADM001', 'Admin', 'Teriyaki', NULL, NULL, NULL, 'pauthing@gmail.com', '123456'),
+('ADM000', 'Admin', 'Joey', 'Ying Jie', '2001-04-19', 'F', 'crazyjoeyooi@gmail.com', '123456   '),
+('ADM001', 'Admin', 'Teriyaki', 'Lim Pau Thing', '2001-06-07', 'F', 'ptlim67@gmail.com', '654321   '),
 ('USR000', 'User', 'Jojo', NULL, NULL, NULL, 'jojo@gmail.com', '123456');
 
 --
