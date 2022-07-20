@@ -94,14 +94,14 @@
 				border-radius:10px;
 			}	
 			
-			.wrap .InputText 
+			.wrap .InputText, .wrap2 .InputText
 			{				
 				height:60px;
 				width:100%;
 				position:relative;
 			}
 			
-			.wrap .InputText input
+			.wrap .InputText input, .wrap2 .InputText input
 			{
 				height:100%;
 				width:100%;
@@ -113,14 +113,16 @@
 			}
 			
 			.wrap .InputText input:focus ~ label,
-			.wrap .InputText input:valid ~ label
+			.wrap .InputText input:valid ~ label, 
+			.wrap2 .InputText input:focus ~ label,
+			.wrap2 .InputText input:valid ~ label
 			{				
 				transform: translateY(-40px);
 				transition:all 0.3s ease;
 				color:black;
 			}
 			
-			.wrap .InputText label
+			.wrap .InputText label, .wrap2 .InputText label
 			{
 				font-size:18px;
 				position:absolute;
@@ -137,7 +139,7 @@
 				outline:none;
 			}
 			
-			.wrap .InputText .underline
+			.wrap .InputText .underline, .wrap2 .InputText .underline
 			{
 				position:absolute;
 				bottom:0px;
@@ -184,7 +186,7 @@
 				left: 50%;
 				width:60%;
 				transform:translate(-50%, -50%);
-				border: 2px solid black;
+				border: 2px solid grey;
 				box-shadow:5px 5px 10px rgba(0,0,0,0.2);
 				display: none;
 				
@@ -196,10 +198,9 @@
 				width:90%;
 				margin-left:auto;
 				margin-right:auto;
-				background-image:linear-gradient(10deg, #EBF2FF, snow);
+				background-image:linear-gradient(180deg, #EBF2FF, snow, #FDFEFF, white);
 				padding:30px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
 			}
 			
 			table, th, td
@@ -501,7 +502,7 @@
 								<label>Title</label>
 							</div>
 							
-							<br>
+							<br><br>
 							
 							<label class = "InputText">Content (Please put '' when there is a apostrophe)</label><br>
 							<textarea name = "Com_content" id = "Com_content" onfocus = "setbg('#E7EFFF');" onblur = "setbg('white')" required placeholder = "Enter your content here..."></textarea>
