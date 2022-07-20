@@ -73,7 +73,7 @@
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/signup"
+        android:id="@+id/btnSignup"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_gravity="center"

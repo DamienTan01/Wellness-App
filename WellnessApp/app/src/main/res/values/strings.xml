@@ -9,4 +9,5 @@
     <string name="button">button</string>
     <string name="loginhere">Already have an account? <u>Login</u></string>
     <string name="signuphere">Don\'t have an account? <u>Signup here</u></string>
+    <string name="tips">Health Tips</string>
 </resources>
