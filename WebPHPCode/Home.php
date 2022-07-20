@@ -35,7 +35,7 @@
 				font-weight:bold;
 			}
 			
-			h3
+			h2
 			{
 				text-align:left;
 				font-style:italic;
@@ -124,11 +124,10 @@
 					echo "<div class = 'dttm'>";
 						echo "<span>Date : " .$DATETIME. "</span>";
 					echo "</div>";
-				?>
+				?>	
 				
-				<br>				
-				
-				<h3>Pending Community Post</h3>
+				<h2>Pending Community Post</h2>
+				<br>
 				
 				<?php
 					$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending'");
@@ -137,7 +136,7 @@
 					echo "<a href = 'Community.php'><button class = 'rpt_btn' style = 'width: 300px;'><i class = '	fas fa-upload'></i>&nbsp;&nbsp;<b>".$rowcount." &nbsp; Submissions</b></button></a>";
 					echo "<a href = 'Tips.php'><button class = 'rpt_btn' style = 'width: 300px;'><i class = 'far fa-hand-point-right'></i>&nbsp;&nbsp;<b>Add Tips</b></button></a>";
 				?>
-			
+				
 				<hr style = "border:2px solid silver;">
 				
 				<div style = "text-align:center;">

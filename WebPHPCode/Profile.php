@@ -27,7 +27,6 @@
 		<link rel="stylesheet" href="css/style.css" />
 		
 		<style>
-			
 			h1
 			{
 				text-align:left;
@@ -56,6 +55,7 @@
 				text-align:right;
 				margin-left:auto;
 				margin-right:auto;
+				border-radius: 4px;
 				background:snow;
 				padding:20px;
 				width:75%;				
@@ -64,6 +64,7 @@
 			
 			.wrap .InputText 
 			{
+				font-family:georgia,garamond,serif;
 				text-align:center;
 				height:70px;
 				width:50%;
@@ -193,10 +194,10 @@
 				background-color: white;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:20px;
+				font-size:16px;
 				text-align: center;
 				text-decoration: none;
-				padding: 10px 100px;
+				padding: 10px 90px;
 				border:none;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 			}

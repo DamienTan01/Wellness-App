@@ -68,7 +68,7 @@
 			{
 				border:none;
 				width:100%;
-				font-size:18px;
+				font-size:16px;
 			}
 			
 			th
@@ -273,7 +273,7 @@
 							
 						if($rowcount == 0)
 						{								
-							echo "<center><h3 style = 'font-size:25px;'><b>There is No Comment Yet</b></h3></center>";
+							echo "<center><h3 style = 'font-size:20px;'><b>There is No Comment Yet</b></h3></center>";
 						}
 						else
 						{						

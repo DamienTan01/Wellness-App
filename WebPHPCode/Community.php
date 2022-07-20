@@ -108,7 +108,7 @@
 				border:none;
 				background-color:white;
 				border-bottom:2px solid silver;
-				font-size:18px;
+				font-size:16px;
 				outline:none;
 			}
 			
@@ -124,7 +124,7 @@
 			
 			.wrap .InputText label, .wrap2 .InputText label
 			{
-				font-size:18px;
+				font-size:16px;
 				position:absolute;
 				bottom:10px;
 				left:0;
@@ -156,13 +156,11 @@
 				text-decoration: none;
 				padding:10px;
 				border:none;
-				width:150px;
+				width:160px;
 				height:45px;
-				border-radius:5px;
 				opacity:60%;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				font-size:18px;
-				font-weight:bold;
+				font-size:16px;
 			}
 			
 			.submit:hover
@@ -182,7 +180,7 @@
 			#overlay
 			{
 				position: absolute;
-				top: 95%;
+				top: 100%;
 				left: 50%;
 				width:60%;
 				transform:translate(-50%, -50%);
@@ -213,7 +211,7 @@
 			table
 			{
 				width:100%;
-				font-size:18px;
+				font-size:16px;
 			}
 			
 			.tb_title
@@ -308,23 +306,6 @@
 				border: 2px solid #cccccc;
 				padding: 5px;
 				resize: none;
-			}
-			
-			.uploadbtn
-			{
-				border: dashed grey 3px;
-				text-align: center;
-				text-decoration: none;
-				padding:10px;
-				border-radius:10px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-			}
-			
-			.uploadbtn:hover
-			{
-				background-color: #cccccc;
-				color: black;
-				transition:0.3s;
 			}
 		</style>
 	</head>
@@ -509,8 +490,8 @@
 						
 							<br><br>
 							
-							<center><button type = "submit" class = "submit" name = "addPost">Post</button>
-							<button type = "reset" class = "cancel" onclick = "off()">Cancel</button></center>
+							<center><button type = "submit" class = "submit" name = "addPost">POST</button>
+							<button type = "reset" class = "cancel" onclick = "off()">CANCEL</button></center>
 						</form>
 					</div>
 				</div>

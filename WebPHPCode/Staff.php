@@ -61,6 +61,12 @@
 				font-weight:bold;
 			}
 			
+			h2
+			{
+				font-style:italic;
+				font-weight:bold;
+			}
+			
 			/* Style the input */
 			.wrap
 			{
@@ -70,7 +76,7 @@
 				background: white;
 				padding:30px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
+				border-radius:6px;
 			}
 			
 			.wrap .InputText 
@@ -126,13 +132,13 @@
 				
 			.submit
 			{
-				background-color: #E8E9FF;
+				background-color: #F1F6FF;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:18px;
+				font-size:16px;
 				text-align: center;
 				text-decoration: none;
-				padding: 10px 120px;
+				padding: 10px 100px;
 				border:none;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 			}
@@ -310,7 +316,7 @@
 							
 							<br><br>
 							
-							<button type = "submit" class = "submit" name = "insertAdmin"> ADD </button>
+							<button type = "submit" class = "submit" name = "insertAdmin">ADD</button>
 						</div>
 					</form>
 				</div>

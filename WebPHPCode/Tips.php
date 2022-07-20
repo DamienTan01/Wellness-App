@@ -70,7 +70,7 @@
 				background: white;
 				padding:30px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
+				border-radius:6px;
 			}
 			
 			.in-wrap
@@ -100,7 +100,7 @@
 				border:none;
 				background-color:white;
 				border-bottom:2px solid silver;
-				font-size:18px;
+				font-size:16px;
 				outline:none;
 			}
 			
@@ -142,10 +142,10 @@
 				background-color: white;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:18px;
+				font-size:16px;
 				text-align: center;
 				text-decoration: none;
-				padding: 10px 120px;
+				padding: 10px 100px;
 				border:none;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 			}
@@ -372,7 +372,7 @@
 							
 							<br><br>
 							
-							<button type = "submit" class = "submit" name = "addTip"> Submit </button>
+							<button type = "submit" class = "submit" name = "addTip">SUBMIT</button>
 						</div>
 					</form>
 				</div>
