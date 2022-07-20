@@ -10,4 +10,8 @@
     <string name="loginhere">Already have an account? <u>Login</u></string>
     <string name="signuphere">Don\'t have an account? <u>Signup here</u></string>
     <string name="tips">Health Tips</string>
+    <string name="menuProfile">Profile</string>
+    <string name="menuCom">Community</string>
+    <string name="menuAchieve">Achievement</string>
+    <string name="menuHome">Home</string>
 </resources>
