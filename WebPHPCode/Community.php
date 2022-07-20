@@ -332,8 +332,16 @@
 						<br><br>
 					<div class = "wrap">
 					<?php
-						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");
-
+						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");						
+						$rowcount = mysqli_num_rows($result);
+							
+						if($rowcount == 0)
+						{								
+							echo "<center><h3 style = 'font-size:25px;'><b>There is no Pending Post</b></h3></center>";								
+						}
+						else
+						{	
+						
 						while($row = mysqli_fetch_array($result))
 						{	
 					
@@ -374,6 +382,7 @@
 						</div>
 					<?php
 						}
+					}
 					?>
 					</div>
 				</div>
@@ -383,7 +392,7 @@
 					
 					<div class = "wrap">
 					<?php
-						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved'");
+						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved' ORDER BY com_published DESC");
 						
 						$rowcount = mysqli_num_rows($result);
 							
@@ -433,7 +442,7 @@
 				<!-- Overlay Add Community Post -->
 				<div id = "overlay" class = "overlay">
 					<div class = "wrap2" style = "width:100%;">
-						<form method = "post" action = "com_insert.php">
+						<form method = "post" action = "com_insert.php" enctype = "multipart/form-data">
 							<h2>Create Community Post</h2>
 							 
 							<hr style = "border-bottom:2px solid grey;">
@@ -446,13 +455,13 @@
 								$stmt = mysqli_query($connected, $query);
 								if(mysqli_num_rows($stmt) > 0) 
 								{
-									if ($row = mysqli_fetch_assoc($stmt)) 
+									if ($row = mysqli_fetch_assoc($stmt))
 									{
 										$value = $row['com_id'];
 										$value = substr($value, 3, 5);
 										$value = $value + 1;
 										$value = sprintf('%06u', $value);
-										$value2 = $value; 
+										$value2 = $value;
 									}								
 								} 
 								else 

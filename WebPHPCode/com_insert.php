@@ -5,9 +5,7 @@
 	session_start();
 	
 	$object = new Connect();
-	
-	if(isset($_SESSION['User_ID']))
-	{		
+
 	if (isset($_POST['addPost']))
 	{
 		$filename 	= $_FILES['media']['name'];
@@ -53,11 +51,5 @@
 			$_SESSION['message'] = "<script>alert('Could not find the file ! ')</script>";
 			header("location:Community.php?st=failure");
 		}
-	}
-	else
-	{
-		$_SESSION['message'] = "<script>alert('File submit Failed')</script>";
-		header("location:Community.php?st=allfailure");
-	}
 	}
 ?>
