@@ -258,7 +258,7 @@
 							
 							<?PHP
 								$value2 = '';
-								$query = "SELECT user_id from users order by user_id DESC LIMIT 1";
+								$query = "SELECT user_id from users WHERE user_type = 'Admin' order by user_id DESC LIMIT 1";
 								$stmt = mysqli_query($connected, $query);
 								if(mysqli_num_rows($stmt) > 0) 
 								{
