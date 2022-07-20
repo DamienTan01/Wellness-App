@@ -36,7 +36,7 @@
 			{
 				padding:5px;				
 				height:100%;
-				padding-top:6%;
+				padding-top:20px;
 				font-size:16px;
 				font-family:georgia,garamond,serif;
 				

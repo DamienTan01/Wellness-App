@@ -265,7 +265,8 @@
 			?>				
 			</div>
 			
-			<div class = "in-wrap2">
+				<h5 style = 'font-size:20px;'><b>Comment</b></h5>
+			
 			<?php
 				$result2 = mysqli_query($connected,"select * FROM comment WHERE com_id = '$COM_ID'");
 						
@@ -281,7 +282,7 @@
 							{
 			?>			
 				<br>
-				<div class = "in-wrap2">
+				<div class = "in-wrap2">				
 			<?php
 								echo "<table>";								
 									echo "<tr>";
@@ -296,7 +297,7 @@
 									echo "</tr>";
 								echo "</table>";
 			?>
-				</div>				
+				</div>			
 			<?php
 							}
 						}

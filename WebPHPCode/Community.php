@@ -33,7 +33,7 @@
 				float: left;
 				border: none;
 				outline: none;
-				padding: 10px;
+				padding: 15px;
 				width: 50%;
 			}
 
@@ -70,9 +70,9 @@
 			}
 			
 			/* Style the input */
-			.wrap
+			.wrap, .ParentWrap
 			{
-				width:90%;
+				width: 100%;
 				margin-left:auto;
 				margin-right:auto;
 				background: white;
@@ -81,7 +81,15 @@
 				border-radius:10px;
 			}
 			
-			.in-wrap
+			.ParentWrap
+			{				
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+			
+			.in-wrap, .layout-wrap
 			{
 				width:100%;
 				margin-left:auto;
@@ -92,7 +100,13 @@
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 				border-radius:10px;
-			}	
+			}
+			
+			.layout-wrap
+			{	
+				flex: 30%;
+				margin:20px;
+			}
 			
 			.wrap .InputText, .wrap2 .InputText
 			{				
@@ -368,7 +382,7 @@
 							echo "</tr>";						
 								
 							echo "<tr>";
-								echo "<td class = 'tb_publish'> Published on : " .$row['com_published']. "</td>";
+								echo "<td class = 'tb_publish'> Published on : <br>" .$row['com_published']. "</td>";
 								echo "<td> Published by : " .$row['user_id']. "</td>";
 							echo "</tr>";
 							
@@ -390,7 +404,7 @@
 				<div id = "Insert" class = "tabcontent">
 					<h1>Post List</h1>
 					
-					<div class = "wrap">
+					<div class = "ParentWrap">
 					<?php
 						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved' ORDER BY com_published DESC");
 						
@@ -405,7 +419,7 @@
 							while($row = mysqli_fetch_array($result))
 							{	
 					?>
-						<div class = "in-wrap">								
+						<div class = "layout-wrap">								
 						
 					<?php 							
 								echo "<table>";

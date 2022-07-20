@@ -33,7 +33,7 @@
 				float: left;
 				border: none;
 				outline: none;
-				padding: 10px;
+				padding: 15px;
 				width: 50%;
 			}
 
