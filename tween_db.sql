@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2022 at 04:08 PM
+-- Generation Time: Jul 20, 2022 at 07:11 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -66,20 +66,16 @@ CREATE TABLE `activity` (
 --
 
 INSERT INTO `activity` (`act_id`, `act_title`, `act_score`) VALUES
-('act000', 'Sit-up', NULL),
-('act001', 'Running', NULL),
-('act002', 'Rope Skipping', NULL),
-('act003', 'Weightlifting', NULL),
-('act004', 'Cycle', NULL),
-('act005', 'Yoga', NULL),
-('act006', 'Stretching', NULL),
-('act007', 'Star Jump', NULL),
-('act008', 'Exercise Balls', NULL),
-('act009', 'Breakfast', NULL),
-('act010', 'Lunch', NULL),
-('act011', 'Dinner', NULL),
-('act012', 'Sleep Earlier', NULL),
-('act013', '8 hours Sleep', NULL);
+('act000', 'Sit-up', 25),
+('act001', 'Running', 25),
+('act002', 'Weightlifting', 25),
+('act003', 'Cycle', 25),
+('act004', 'Yoga', 25),
+('act005', 'Breakfast', 10),
+('act006', 'Lunch', 10),
+('act007', 'Dinner', 10),
+('act008', 'Sleep Earlier', 10),
+('act009', '8 hours Sleep', 10);
 
 -- --------------------------------------------------------
 
@@ -93,6 +89,13 @@ CREATE TABLE `comment` (
   `user_id` varchar(6) NOT NULL,
   `content` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`commentID`, `com_id`, `user_id`, `content`) VALUES
+(18, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
 
 -- --------------------------------------------------------
 
@@ -116,9 +119,9 @@ CREATE TABLE `community` (
 --
 
 INSERT INTO `community` (`com_id`, `com_title`, `com_content`, `com_media`, `com_published`, `com_like`, `com_status`, `user_id`) VALUES
-('000002', 'Celebrity', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbb', 'celebrity.png', '2022-07-18 13:55:54', 0, 'Approved', 'USR000'),
-('000003', 'Testing Community', 'Testing 123... Approve pending please... Thank you!', 'Testing.png', '2022-07-18 14:47:29', 0, 'Approved', 'USR000'),
-('000004', 'Bad day ever', 'Once upon a time,\r\n\r\nMarry found her lovely prince outside the castle.\r\n\r\nShe wanted to marry him but got rejected.', 'Badday.png', '2022-07-19 03:22:15', 0, 'Approved', 'USR000');
+('000002', 'Celebrity', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbb', 'celebrity.png', '2022-07-18 05:55:54', 0, 'Approved', 'USR000'),
+('000003', 'Testing Community', 'Testing 123... Approve pending please... Thank you!', 'Testing.png', '2022-07-18 06:47:29', 0, 'Approved', 'USR000'),
+('000004', 'Bad day ever', 'Once upon a time,\r\n\r\nMarry found her lovely prince outside the castle.\r\n\r\nShe wanted to marry him but got rejected.', 'Badday.png', '2022-07-18 19:22:15', 0, 'Approved', 'USR000');
 
 -- --------------------------------------------------------
 
@@ -143,7 +146,7 @@ CREATE TABLE `records` (
 CREATE TABLE `tips` (
   `tip_id` varchar(6) NOT NULL,
   `tip_title` varchar(255) NOT NULL,
-  `tip_content` text NOT NULL,
+  `tip_content` longtext NOT NULL,
   `tip_media` text DEFAULT NULL,
   `tip_published` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -153,13 +156,11 @@ CREATE TABLE `tips` (
 --
 
 INSERT INTO `tips` (`tip_id`, `tip_title`, `tip_content`, `tip_media`, `tip_published`) VALUES
-('TIP000', 'Test Tip', 'asdjfhlasd fljadsh flj ahsdlfkjh df', NULL, '2022-07-18 03:49:08'),
 ('TIP001', 'Sha', 'Shy shy shy', '샤_bgr_2.jpg', '2022-07-19 03:03:38'),
 ('TIP002', 'Test Tip2', 'AHHHHHHHHHHHHH', '샤_bgr_1.jpg', '2022-07-19 03:23:33'),
 ('TIP003', 'Alcohol Free Tip', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.', 'image1.jpg', '2022-07-19 03:23:54'),
 ('TIP004', 'ERm', 'What are the 5 duties of a principal? \r\n\r\n- Shaping a vision of academic success for all students. \r\n\r\n- Creating a climate hospitable to education. \r\n\r\n- Cultivating leadership in others. \r\n\r\n- Improving instruction. \r\n\r\n- Managing people, data and processes.\r\n', 'Link.png', '2022-07-19 03:29:12'),
-('TIP005', 'What are 5 benefits of wellness?', 'It is in high demand.\r\n\r\nIt improves productivity and performance.\r\n\r\nIt lowers the risk of illness and the impact of stress.\r\n\r\nIt lowers healthcare costs.\r\n\r\nIt improves teamwork.\r\n', 'gudetama.png', '2022-07-19 03:36:44'),
-('TIP006', 'Laugh More to Get A Healthy Life', 'Be like Benson \r\nToxic all the time\r\nSee u next time', 'bananaman.png', '2022-07-19 21:49:54');
+('TIP005', 'What are 5 benefits of wellness?', 'It is in high demand.\r\n\r\nIt improves productivity and performance.\r\n\r\nIt lowers the risk of illness and the impact of stress.\r\n\r\nIt lowers healthcare costs.\r\n\r\nIt improves teamwork.\r\n', 'gudetama.png', '2022-07-19 03:36:44');
 
 -- --------------------------------------------------------
 
@@ -183,8 +184,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_type`, `username`, `name`, `dob`, `gender`, `email`, `password`) VALUES
-('ADM000', 'Admin', 'Joey', 'Ying Jie', '2001-04-19', 'F', 'crazyjoeyooi@gmail.com', '123456   '),
-('ADM001', 'Admin', 'Teriyaki', 'Lim Pau Thing', '2001-06-07', 'F', 'ptlim67@gmail.com', '654321   '),
+('ADM000', 'Admin', 'Joey', 'Ying Jie', '2001-04-19', 'F', 'crazyjoeyooi@gmail.com', '123456 '),
 ('USR000', 'User', 'Jojo', NULL, NULL, NULL, 'jojo@gmail.com', '123456');
 
 --
@@ -253,7 +253,7 @@ ALTER TABLE `ach_records`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `commentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `records`
