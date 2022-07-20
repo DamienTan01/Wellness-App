@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2022 at 07:11 AM
+-- Generation Time: Jul 20, 2022 at 02:28 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -24,29 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `achievement`
---
-
-CREATE TABLE `achievement` (
-  `ach_id` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ach_title` varchar(50) NOT NULL,
-  `ach_description` text NOT NULL,
-  `ach_score` int(11) NOT NULL,
-  `ach_status` tinyint(1) NOT NULL,
-  `act_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `ach_records`
 --
 
 CREATE TABLE `ach_records` (
   `record_id` int(11) NOT NULL,
   `user_id` varchar(6) NOT NULL,
-  `ach_id` varchar(6) NOT NULL,
-  `ach_status` tinyint(1) NOT NULL
+  `ach_name` varchar(50) NOT NULL,
+  `act_id` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -185,17 +170,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_type`, `username`, `name`, `dob`, `gender`, `email`, `password`) VALUES
 ('ADM000', 'Admin', 'Joey', 'Ying Jie', '2001-04-19', 'F', 'crazyjoeyooi@gmail.com', '123456 '),
+('ADM001', 'Admin', 'Teriyaki', NULL, NULL, NULL, 'pauthing@gmail.com', '123456'),
 ('USR000', 'User', 'Jojo', NULL, NULL, NULL, 'jojo@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `achievement`
---
-ALTER TABLE `achievement`
-  ADD PRIMARY KEY (`ach_id`);
 
 --
 -- Indexes for table `ach_records`
