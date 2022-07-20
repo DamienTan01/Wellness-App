@@ -88,7 +88,7 @@
 			
 			.wrap .InputText 
 			{				
-				height:75px;
+				height:60px;
 				width:100%;
 				position:relative;
 			}
@@ -240,7 +240,6 @@
 				color: black;
 				transition:0.3s;
 			}
-			
 		</style>
 	</head>
 	
@@ -349,7 +348,7 @@
 							
 							<img id = "thumb" src = "icon/NoImage.png" width = "200px" />
 							<br>
-							<label>Select File to uploads : </label>
+							<label>Select File to upload : </label>
 							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()" required />												
 							
 							<br>

@@ -44,7 +44,7 @@
 				margin:0;
 				background-color:#B2D2FC;
 				padding:20px;
-				font-size:20px;				
+				font-size:16px;				
 				font-family:georgia,garamond,serif;
 				height:100%;				
 			}
@@ -68,7 +68,7 @@
 			{
 				border:none;
 				width:100%;
-				font-size:20px;
+				font-size:18px;
 			}
 			
 			th
@@ -86,11 +86,6 @@
 			.tb_publish
 			{
 				text-align:left;
-			}
-			
-			.tb_status
-			{
-				text-align:right;
 			}
 			
 			.tb_content

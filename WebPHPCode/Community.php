@@ -62,6 +62,13 @@
 				font-weight:bold;
 			}
 			
+			h2
+			{
+				text-align:center;
+				font-style:italic;
+				font-weight:bold;
+			}
+			
 			/* Style the input */
 			.wrap
 			{
@@ -80,7 +87,7 @@
 				margin-left:auto;
 				margin-right:auto;
 				margin-bottom:20px;
-				background-image: linear-gradient(10deg, #E8E9FF, snow);
+				background-image: linear-gradient(190deg, #E8E9FF, snow, white);
 				height:auto;
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
@@ -89,7 +96,7 @@
 			
 			.wrap .InputText 
 			{				
-				height:75px;
+				height:60px;
 				width:100%;
 				position:relative;
 			}
@@ -101,7 +108,7 @@
 				border:none;
 				background-color:white;
 				border-bottom:2px solid silver;
-				font-size:20px;
+				font-size:18px;
 				outline:none;
 			}
 			
@@ -115,7 +122,7 @@
 			
 			.wrap .InputText label
 			{
-				font-size:20px;
+				font-size:18px;
 				position:absolute;
 				bottom:10px;
 				left:0;
@@ -143,32 +150,37 @@
 				background-color: white;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:20px;
 				text-align: center;
 				text-decoration: none;
-				padding: 10px 120px;
+				padding:10px;
 				border:none;
+				width:150px;
+				height:45px;
+				border-radius:5px;
+				opacity:60%;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				font-size:18px;
+				font-weight:bold;
 			}
 			
 			.submit:hover
 			{
-				background-color:#5199F9;
+				background-color:#6FC4FF;
 				color: white;
-				transition:0.3s;
+				transition:0.5s;
 			}
 			
 			.cancel:hover
 			{
 				background-color:red;
 				color: white;
-				transition:0.3s;
+				transition:0.5s;
 			}
 			
 			#overlay
 			{
 				position: absolute;
-				top: 50%;
+				top: 95%;
 				left: 50%;
 				width:60%;
 				transform:translate(-50%, -50%);
@@ -177,7 +189,18 @@
 				display: none;
 				
 				z-index: 1000;
-			}			
+			}
+			
+			.wrap2
+			{
+				width:90%;
+				margin-left:auto;
+				margin-right:auto;
+				background-image:linear-gradient(10deg, #EBF2FF, snow);
+				padding:30px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:10px;
+			}
 			
 			table, th, td
 			{
@@ -189,6 +212,7 @@
 			table
 			{
 				width:100%;
+				font-size:18px;
 			}
 			
 			.tb_title
@@ -198,24 +222,22 @@
 			
 			.tb_image
 			{
-				width:250px;
+				height:250px;
 				border:solid 1px grey;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 			}
-			
+						
 			.tb_publish
 			{
-				text-align:right;
-			}
-			
-			.tb_status
-			{
-				text-align:right;
+				text-align:left;
 			}
 			
 			.tb_content
 			{
 				white-space: pre-line;
+				text-align:left;
+				padding:20px;
+				vertical-align:top;
 			}
 			
 			.edit_btn			
@@ -233,7 +255,21 @@
 				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
-			.edit_btn:hover
+			.edit_btn2
+			{
+				background-color: #A99CFF;
+				color: white;
+				width: 40px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 20px;
+				padding: 10px;
+				border: none;
+				border-radius: 25%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+			}
+			
+			.edit_btn:hover, .edit_btn2:hover
 			{
 				background-color: snow;
 				color: black;
@@ -248,12 +284,12 @@
 				text-decoration: none;
 				padding:10px;
 				border:none;
-				width:250px;
+				width:200px;
 				height:50px;
 				border-radius:5px;
 				opacity:60%;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				font-size:25px;
+				font-size:20px;
 				font-weight:bold;
 			}
 			
@@ -261,6 +297,32 @@
 			{
 				box-shadow:5px 5px 10px rgba(0,0,0,0.2);
 				opacity:1;
+				transition:0.5s;
+			}
+			
+			textarea
+			{
+				width: 100%;
+				height: 200px;
+				border: 2px solid #cccccc;
+				padding: 5px;
+				resize: none;
+			}
+			
+			.uploadbtn
+			{
+				border: dashed grey 3px;
+				text-align: center;
+				text-decoration: none;
+				padding:10px;
+				border-radius:10px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+			}
+			
+			.uploadbtn:hover
+			{
+				background-color: #cccccc;
+				color: black;
 				transition:0.3s;
 			}
 		</style>
@@ -286,7 +348,7 @@
 						<button class = 'add_btn' style = "text-align:center;" onclick = "on()"><i class = 'fas fa-plus'></i> Add Post </button>
 						
 						<br><br>
-					
+					<div class = "wrap">
 					<?php
 						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");
 
@@ -331,6 +393,7 @@
 					<?php
 						}
 					?>
+					</div>
 				</div>
 
 				<div id = "Insert" class = "tabcontent">
@@ -357,7 +420,7 @@
 								echo "<table>";
 							
 								echo "<tr>";
-									echo "<th colspan = 2 style = 'text-align:right;'><a href = 'com_show.php?id=".$row['com_id']."'><button class = 'edit_btn' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
+									echo "<th colspan = 2 style = 'text-align:right;'><a href = 'com_show.php?id=".$row['com_id']."'><button class = 'edit_btn2' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
 								echo "</tr>";
 							
 								echo "<tr>";									
@@ -387,20 +450,68 @@
 				
 				<!-- Overlay Add Community Post -->
 				<div id = "overlay" class = "overlay">
-				<div class = "wrap" style = "text-align:center; width:100%;">
-					<form method = "post" action = "com_insert.php">
-						<h2>Create Community</h2>
+					<div class = "wrap2" style = "width:100%;">
+						<form method = "post" action = "com_insert.php">
+							<h2>Create Community Post</h2>
 							 
-						<hr style = "border-bottom:2px solid grey;">
+							<hr style = "border-bottom:2px solid grey;">
 						
+							<div class = "InputText" style = "display:none;">
+							
+							<?php
+								$value = '';
+								$query = "SELECT com_id from community order by com_id DESC LIMIT 1";
+								$stmt = mysqli_query($connected, $query);
+								if(mysqli_num_rows($stmt) > 0) 
+								{
+									if ($row = mysqli_fetch_assoc($stmt)) 
+									{
+										$value = $row['com_id'];
+										$value = substr($value, 3, 5);
+										$value = $value + 1;
+										$value = sprintf('%06u', $value);
+										$value2 = $value; 
+									}								
+								} 
+								else 
+								{
+									$value2 = "000001";
+								}
+							?>
+							
+								<input type = "text" id = "Com_id" name = "Com_id" value = "<?PHP echo $value2; ?>" required />		
+							</div>
+							
+							<img id = "thumb" src = "icon/NoImage.png" width = "200px" />
+							<br><br>
+							<label>Select File to upload : </label>
+							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()" required />
+							
+							<br><br>
+							
+							<div class = "InputText">
+								<input class = "disabled" type = "text" value = "<?PHP echo $value2; ?>" disabled />
+								<label style = "color:black;">ID (Prefixed)</label>
+							</div>
+							
+							<br>
+							
+							<div class = "InputText">
+								<input type = "text" name = "Com_title" id = "Com_title" required />
+								<label>Title</label>
+							</div>
+							
+							<br>
+							
+							<label class = "InputText">Content (Please put '' when there is a apostrophe)</label><br>
+							<textarea name = "Com_content" id = "Com_content" onfocus = "setbg('#E7EFFF');" onblur = "setbg('white')" required placeholder = "Enter your content here..."></textarea>
 						
+							<br><br>
 							
-						<br><br>
-							
-						<input type = "submit" class = "submit">
-						<button type = "reset" class = "cancel" onclick = "off()">Cancel</button>
-					</form>
-				</div>
+							<center><button type = "submit" class = "submit" name = "addPost">Post</button>
+							<button type = "reset" class = "cancel" onclick = "off()">Cancel</button></center>
+						</form>
+					</div>
 				</div>
 				
 				<script>
@@ -429,7 +540,7 @@
 					
 					function setbg(color)
 					{
-						document.getElementById("Tip_content").style.background=color
+						document.getElementById("Com_content").style.background=color
 					}
 					
 					function on() 
@@ -440,6 +551,11 @@
 					function off() 
 					{
 						document.getElementById("overlay").style.display = "none";
+					}
+					
+					function preview()
+					{
+						thumb.src = URL.createObjectURL(event.target.files[0]);
 					}
 				</script>
 			</div>
