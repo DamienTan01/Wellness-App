@@ -78,7 +78,7 @@
 				background-color:#85FFFF;
 				background-image: linear-gradient(0deg, #C6BFFF, snow);
 				position:sticky;
-				height:9%;
+				height:9.5%;
 				width:100%;
 				font-size:18px;
 				padding:13px;
