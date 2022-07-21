@@ -14,4 +14,10 @@
     <string name="menuCom">Community</string>
     <string name="menuAchieve">Achievement</string>
     <string name="menuHome">Home</string>
+    <string name="profilepic">profilePic</string>
+    <string name="gender">Gender</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="name">Name</string>
+    <string name="logout">logout</string>
+    <string name="editprofile">editprofile</string>
 </resources>
