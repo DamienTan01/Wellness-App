@@ -111,7 +111,7 @@
 				margin-left:auto;
 				margin-right:auto;
 				margin-bottom:20px;
-				background-image: linear-gradient(10deg, #E8E9FF, snow);
+				background-image: linear-gradient(10deg, #CAE9FF, #EEF8FF, snow);
 				height:auto;
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
@@ -120,7 +120,7 @@
 			
 			.in-wrap2
 			{
-				background-image: linear-gradient(35deg, #C6C8E3, white);
+				background-image: linear-gradient(185deg, #D5E0F3, white);
 				height:auto;
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);

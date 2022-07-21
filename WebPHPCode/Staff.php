@@ -165,6 +165,8 @@
 			
 			th
 			{
+				background-color:#568ED3;
+				color:snow;
 				text-align:center;
 			}
 			
@@ -235,12 +237,12 @@
 							while($row = mysqli_fetch_array($result))
 							{
 								echo "<tr>";
-								echo "<td width='20px'>" . $row['user_id'] . "</td>";
+								echo "<td width='20px' style = 'text-align:center;'>" . $row['user_id'] . "</td>";
 								echo "<td>" . $row['username'] . "</td>";
 								echo "<td>" . $row['email'] . "</td>";
 								echo "<td>" . $row['name'] . "</td>";
-								echo "<td>" . $row['dob'] . "</td>";
-								echo "<td>" . $row['gender'] . "</td>";
+								echo "<td style = 'text-align:center;'>" . $row['dob'] . "</td>";
+								echo "<td style = 'text-align:center;'>" . $row['gender'] . "</td>";
 																							
 								echo "<td><center><button class = 'edit_btn'><a href = 'staff_delete.php?id=".$row['user_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'material-icons'>delete</i></a></button></center></td>";
 								

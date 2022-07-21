@@ -95,7 +95,7 @@
 				margin-left:auto;
 				margin-right:auto;
 				margin-bottom:20px;
-				background-image: linear-gradient(190deg, #E8E9FF, snow, white);
+				background-image: linear-gradient(35deg, #E1F2FF, snow);
 				height:auto;
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
@@ -159,7 +159,31 @@
 				bottom:0px;
 				height:2px;
 				width:100%;				
-			}				
+			}
+
+			.wrap3
+			{
+				width:95%;
+				margin-left:auto;
+				margin-right:auto;
+				background: white;
+				padding:30px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:6px;
+			}
+			
+			.in-wrap3
+			{
+				width:100%;
+				margin-left:auto;
+				margin-right:auto;
+				margin-bottom:20px;
+				background-image: linear-gradient(35deg, #CAE9FF, #EEF8FF, snow);
+				height:auto;
+				padding:20px;
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border-radius:10px;
+			}
 				
 			.submit, .cancel
 			{
@@ -194,7 +218,7 @@
 			#overlay
 			{
 				position: absolute;
-				top: 65%;
+				top: 80%;
 				left: 50%;
 				width:60%;
 				transform:translate(-50%, -50%);
@@ -340,11 +364,13 @@
 					?>
 				</span>
 				
+				<br>
+				
 				<div id = "Show" class = "tabcontent">	
 						<button class = 'add_btn' style = "text-align:center;" onclick = "on()"><i class = 'fas fa-plus'></i> Add Post </button>
 						
 						<br><br>
-					<div class = "wrap">
+					<div class = "wrap3">
 					<?php
 						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");						
 						$rowcount = mysqli_num_rows($result);
@@ -360,7 +386,7 @@
 						{	
 					
 					?>
-						<div class = "in-wrap">
+						<div class = "in-wrap3">
 					<?php							
 						echo "<table>";
 							

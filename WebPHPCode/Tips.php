@@ -79,7 +79,7 @@
 				margin-left:auto;
 				margin-right:auto;
 				margin-bottom:20px;
-				background-image: linear-gradient(35deg, #E8E9FF, snow);
+				background-image: linear-gradient(35deg, #CAE9FF, #EEF8FF, snow);
 				height:auto;
 				padding:20px;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
@@ -259,6 +259,8 @@
 					?>
 				</span>
 				
+				<br>
+				
 				<div id = "Show" class = "tabcontent">
 					<div class = "wrap">					
 						<?php
@@ -365,9 +367,9 @@
 								<label>Title</label>
 							</div>
 							
-							<br>
+							<br><br>
 							
-							<label class = "InputText">Content (Please put '' when there is a apostrophe)</label><br>
+							<label class = "InputText">Content (Please put '' when there is a apostrophe) <br> For example : There''s a Apple Pen on the Pineapple.</label><br>
 							<textarea name = "Tip_content" id = "Tip_content" onfocus = "setbg('#E7EFFF');" onblur = "setbg('white')" required placeholder = "Enter your content here..."></textarea>
 							
 							<br><br>

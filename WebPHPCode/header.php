@@ -76,12 +76,12 @@
 				font-family:georgia,garamond,serif;
 				text-align:left;
 				background-color:#85FFFF;
-				background-image: linear-gradient(0deg, #C6BFFF, snow);
+				background-image: linear-gradient(0deg, #B1ADF7, #D3D1FF, snow);
 				position:sticky;
 				height:9.5%;
 				width:100%;
 				font-size:18px;
-				padding:13px;
+				padding:12px;
 				box-shadow: 0 0 10px rgba(0,0,0,0.5);
 				
 				z-index:900;
@@ -93,7 +93,10 @@
 				text-decoration:none;				
 				color:grey;
 				text-align:left;
-				padding:20px;
+				padding-top:15px;
+				padding-bottom:15px;
+				padding-left:20px;
+				padding-right:20px;
 			}
 
 			.navbar a:hover
@@ -102,7 +105,7 @@
 				text-shadow:-0.5px 1px black;
 				background-color:snow;
 				transition: 0.3s;
-				border-radius:20px;
+				border-radius:15px;
 			}		
 		</style>
 	</head>

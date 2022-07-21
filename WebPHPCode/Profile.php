@@ -50,6 +50,11 @@
 				font-weight:bold;
 			}
 			
+			.content
+			{
+				padding-top:30px;
+			}
+			
 			.wrap
 			{
 				text-align:right;

@@ -58,18 +58,18 @@
 			
 			.dttm
 			{
-				background-color: #85BAFF;
-				color:snow;
+				background-color: #CBDEF4;
+				color:black;
 				width: 15%;
 				float:right;
 				text-align:center;
-				padding:5px;
+				padding:6px;
 				font-family:Times New Roman;
 				font-size:18px;
 				font-weight:bold;
 				border-radius:10px 0 0 10px;
 				border:none;
-				box-shadow:0 5px 15px rgba(0,0,0,0.5);
+				box-shadow:0 4px 10px rgba(0,0,0,0.5);
 			}
 			
 			.rpt_btn
@@ -80,7 +80,7 @@
 				padding:10px;
 				font-family:Times New Roman;
 				font-size:25px;
-				background-color: #85BAFF;
+				background-color: #8CCEFF;
 				color:snow;
 				outline:none;
 				border-radius:10px 0 20px;
@@ -103,7 +103,7 @@
 				height: 200px;
 				font-family:Arial;
 				font-size:25px;
-				background-color: #A2BCF2;
+				background-color: #91B9F1;
 				border-radius:30px;
 				color:snow;
 				outline:none;
@@ -152,6 +152,7 @@
 					echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class = 'analysis'><b>Tips Posted<br>".$rowcount2."</b></button>";
 				?>
 				</div>
+				<br>
 			</div>
 		</div>
 	</body>
