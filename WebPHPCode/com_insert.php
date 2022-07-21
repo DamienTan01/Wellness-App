@@ -47,9 +47,25 @@
 			}			
 		}
 		else
-		{
-			$_SESSION['message'] = "<script>alert('Could not find the file ! ')</script>";
-			header("location:Community.php?st=failure");
+		{			
+			$UID 		= $_SESSION['User_ID'];
+			$ID 		= $_POST['Com_id'];
+			$Title 		= $_POST['Com_title'];
+			$Content 	= $_POST['Com_content'];
+			$status 	= 'Approved';
+			
+			$query = "INSERT INTO `community`(`com_id`, `com_title`, `com_content`, `com_media`, `com_status`, `user_id`) VALUES ('$ID', '$Title', '$Content', '$filename', '$status', '$UID')";			
+			
+			if(mysqli_query($connected, $query))
+			{
+				$_SESSION['message'] = "<script> alert('Successful! :D'); </script>";
+				header("location:Community.php?st=success");
+			}
+			else
+			{
+				$_SESSION['message'] = "<script> alert('Failed! :O '); </script>";
+				header("location:Community.php?st=insertfailure");
+			}			
 		}
 	}
 ?>

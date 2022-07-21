@@ -173,7 +173,7 @@
 				unset($_SESSION['status']);
 			}
 		?>
-	
+		
 		<form method = "post" action = "LoginCheck.php" class = "biglogin">
 			<div class = "inline">				
 				<h1 style = "text-align: center; text-transform: uppercase;">Admin Login</h1>

@@ -252,15 +252,36 @@
 				echo "<table>";
 							
 					echo "<tr>";
-						echo "<td class = 'tb_publish'> Published on : " .$row['com_published']. "</td>";
+						echo "<td class = 'tb_publish'> Published on : " .$row['com_published']. "</td>";						
 						echo "<td style = 'text-align:right;'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'fa fa-trash'></i></button></a></td>";
 					echo "</tr>";
-								
-					echo "<tr>";									
-						echo "<td><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";	
-						echo "<td width = '65%' class = 'tb_content'>" .$row['com_content']. "</td>";
-					echo "</tr>";
-				
+					
+					if($row['com_media'] != NULL)
+					{
+						echo "<tr>";
+							echo "<td><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";	
+							echo "<td width = '65%' class = 'tb_content'>" .$row['com_content']. "</td>";
+						echo "</tr>";
+					}
+					else
+					{
+						echo "<tr>";
+							echo "<td colspan = 2 class = 'tb_content'>" .$row['com_content']. "</td>";
+						echo "</tr>";
+					}
+					
+					echo "<tr>";
+					
+						$USER = $row['user_id'];
+						//echo "<td colspan = 2 class = 'tb_publish'> Published by : " .$row['user_id']. "</td>";
+						$query = mysqli_query($connected,"select * FROM users WHERE user_id = '$USER'");
+						$data = mysqli_fetch_array($query);
+						
+						echo "<td colspan = 2 class = 'tb_publish'> Published by : " .$data['username']. "</td>";
+						
+						
+					echo "</tr>";		
+					
 				echo "</table>";
 			?>				
 			</div>

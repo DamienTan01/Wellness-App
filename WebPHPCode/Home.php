@@ -125,7 +125,7 @@
 						echo "<span>Date : " .$DATETIME. "</span>";
 					echo "</div>";
 				?>	
-				
+								
 				<h2>Pending Community Post</h2>
 				<br>
 				

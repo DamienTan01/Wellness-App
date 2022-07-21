@@ -194,7 +194,7 @@
 			#overlay
 			{
 				position: absolute;
-				top: 100%;
+				top: 65%;
 				left: 50%;
 				width:60%;
 				transform:translate(-50%, -50%);
@@ -490,7 +490,7 @@
 							<img id = "thumb" src = "icon/NoImage.png" width = "200px" />
 							<br><br>
 							<label>Select File to upload : </label>
-							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()" required />
+							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()"/>
 							
 							<br><br>
 							
@@ -508,7 +508,7 @@
 							
 							<br><br>
 							
-							<label class = "InputText">Content (Please put '' when there is a apostrophe)</label><br>
+							<label class = "InputText">Content (Please put '' when there is a apostrophe) <br> For example : There''s a Apple Pen on the Pineapple.</label><br>
 							<textarea name = "Com_content" id = "Com_content" onfocus = "setbg('#E7EFFF');" onblur = "setbg('white')" required placeholder = "Enter your content here..."></textarea>
 						
 							<br><br>
