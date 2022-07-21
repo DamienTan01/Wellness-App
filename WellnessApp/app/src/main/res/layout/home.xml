@@ -13,6 +13,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/tips"
         android:textSize="38sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
