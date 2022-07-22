@@ -272,8 +272,7 @@
 					
 					echo "<tr>";
 					
-						$USER = $row['user_id'];
-						//echo "<td colspan = 2 class = 'tb_publish'> Published by : " .$row['user_id']. "</td>";
+						$USER = $row['user_id'];						
 						$query = mysqli_query($connected,"select * FROM users WHERE user_id = '$USER'");
 						$data = mysqli_fetch_array($query);
 						
