@@ -20,9 +20,9 @@
 		<style>
 			body
 			{
-				background: linear-gradient(-30deg, #2B6AC3, #6998CC, #A3D7F9, #E3D9FF, #9A7BF7);
+				background: linear-gradient(-50deg, #2B6AC3, #6998CC, #A3D7F9, #E3D9FF, #9A7BF7);
 				background-size: 500% 500%;
-				animation: gradient 8s ease infinite;
+				animation: gradient 6s ease infinite;
 				font-family: Gill Sans MT;
 			}
 			
@@ -219,13 +219,11 @@
 	</head>
 	
 	<body>
-	
 		<div class = "wrap">
-			<form method = "post" action = "register.php">
-				
+			<form method = "POST" action = "register.php">
 				<span id = "message"></span>
 				<span>
-					<?PHP
+					<?php
 						if(isset($_SESSION['message']))
 						{
 							echo $_SESSION['message'];

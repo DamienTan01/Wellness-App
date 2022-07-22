@@ -13,7 +13,7 @@
 
 <html>
 	<head>
-		<title> - Admin Management - </title>		
+		<title> - Tips Management - </title>		
 		
 		<style>
 			.con
@@ -346,7 +346,7 @@
 							</div>
 							
 							<img id = "thumb" src = "icon/NoImage.png" width = "200px" />
-							<br>
+							<br><br>
 							<label>Select File to upload : </label>
 							<input class = "uploadbtn" type = "file" name = "media" onchange = "preview()" required />												
 							

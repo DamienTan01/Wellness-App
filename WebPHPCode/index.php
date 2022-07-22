@@ -28,9 +28,9 @@
         <style>
             body 
 			{
-                background: linear-gradient(-30deg, #2B6AC3, #6998CC, #A3D7F9, #E3D9FF, #9A7BF7);
+                background: linear-gradient(-50deg, #2B6AC3, #6998CC, #A3D7F9, #E3D9FF, #9A7BF7);
 				background-size: 500% 500%;
-				animation: gradient 8s ease infinite;
+				animation: gradient 6s ease infinite;
 				font-family: Gill Sans MT;
             }
 			
@@ -160,13 +160,11 @@
 				background-color: #5FA7D8;
 				font-family: Gill Sans MT;
 			}		
-			
         </style>
     </head>
 	
 	<body>
-	
-		<?PHP
+		<?php
 			if(isset($_SESSION['status']))
 			{
 				echo "<h5 class = 'alert alert-success'>".$_SESSION['status']."</h5>";
@@ -193,10 +191,9 @@
 							<input type = "password" name = "User_pwd" id = "User_pwd" required>
 							<label>Password</label>
 						</div>
-							
-							
+						
 						<br><br><br>
-							
+						
 						<input type = "submit" name = "Sign" id = "Sign" value = "Log In" class = "submit">
 						<br>						
 					</form>

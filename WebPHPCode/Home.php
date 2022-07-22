@@ -17,14 +17,19 @@
 	<head>
 		<title>- Home -</title>
 
-		<style>			
+		<style>
+			.content
+			{
+				padding-top: 30px;
+			}
+			
 			.wrap
 			{
 				margin-left: auto;
 				margin-right: auto;
 				background: snow;
 				padding: 20px;
-				width: 95%;
+				width: 90%;
 				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 				border-radius: 10px;
 			}
@@ -117,7 +122,7 @@
 	<body>
 		<div class = "content">
 			<div class = "wrap">
-				<?PHP
+				<?php
 					$DATETIME = date("Y-m-d");
 					
 					echo "<div class = 'dttm'>";
