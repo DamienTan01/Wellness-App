@@ -18,16 +18,16 @@
 		<style>
 			.con
 			{
-				padding:5%;
-				padding-top:5px;
-				margin-top:5px;
-				margin-left:auto;
-				margin-right:auto;
+				padding: 5%;
+				padding-top: 5px;
+				margin-top: 5px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			
 			.tablink 
 			{
-				font-weight:bold;
+				font-weight: bold;
 				background-color: #CCC5FF;
 				color: black;
 				float: left;
@@ -40,8 +40,8 @@
 			.tablink:hover 
 			{
 				background-color: #E6E3FF;
-				transition:0.3s;
-				text-shadow:-0.5px 1px black;
+				transition: 0.3s;
+				text-shadow: -0.5px 1px black;
 			}		
 
 			/* Style the tab content */
@@ -49,36 +49,36 @@
 			{				
 				display: none;
 				background-color: snow;
-				padding:20px;
+				padding: 20px;
 				padding-top: 70px;
 				box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-				text-align:center;
+				text-align: center;
 			}
 			
 			h1
 			{
-				text-align:center;
-				font-style:italic;
-				font-weight:bold;
+				text-align: center;
+				font-style: italic;
+				font-weight: bold;
 			}
 			
 			h2
 			{
-				text-align:center;
-				font-style:italic;
-				font-weight:bold;
+				text-align: center;
+				font-style: italic;
+				font-weight: bold;
 			}
 			
 			/* Style the input */
 			.wrap, .ParentWrap
 			{
 				width: 100%;
-				margin-left:auto;
-				margin-right:auto;
+				margin-left: auto;
+				margin-right: auto;
 				background: white;
-				padding:30px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
+				padding: 30px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				border-radius: 10px;
 			}
 			
 			.ParentWrap
@@ -91,39 +91,39 @@
 			
 			.in-wrap, .layout-wrap
 			{
-				width:100%;
-				margin-left:auto;
-				margin-right:auto;
-				margin-bottom:20px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
 				background-image: linear-gradient(35deg, #E1F2FF, snow);
-				height:auto;
-				padding:20px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
+				height: auto;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				border-radius: 10px;
 			}
 			
 			.layout-wrap
 			{	
 				flex: 30%;
-				margin:20px;
+				margin: 20px;
 			}
 			
 			.wrap .InputText, .wrap2 .InputText
 			{				
-				height:60px;
-				width:100%;
-				position:relative;
+				height: 60px;
+				width: 100%;
+				position: relative;
 			}
 			
 			.wrap .InputText input, .wrap2 .InputText input
 			{
-				height:100%;
-				width:100%;
-				border:none;
-				background-color:white;
-				border-bottom:2px solid silver;
-				font-size:16px;
-				outline:none;
+				height: 100%;
+				width: 100%;
+				border: none;
+				background-color: white;
+				border-bottom: 2px solid silver;
+				font-size: 16px;
+				outline: none;
 			}
 			
 			.wrap .InputText input:focus ~ label,
@@ -132,87 +132,87 @@
 			.wrap2 .InputText input:valid ~ label
 			{				
 				transform: translateY(-40px);
-				transition:all 0.3s ease;
-				color:black;
+				transition: all 0.3s ease;
+				color: black;
 			}
 			
 			.wrap .InputText label, .wrap2 .InputText label
 			{
-				font-size:16px;
-				position:absolute;
-				bottom:10px;
-				left:0;
-				color:grey;
+				font-size: 16px;
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+				color: grey;
 			}
 			
 			.disabled ~ label
 			{
 				transform: translateY(-40px);
-				transition:all 0.3s ease;
-				color:black;
-				outline:none;
+				transition: all 0.3s ease;
+				color: black;
+				outline: none;
 			}
 			
 			.wrap .InputText .underline, .wrap2 .InputText .underline
 			{
-				position:absolute;
-				bottom:0px;
-				height:2px;
-				width:100%;				
+				position: absolute;
+				bottom: 0px;
+				height: 2px;
+				width: 100%;				
 			}
 
 			.wrap3
 			{
-				width:95%;
-				margin-left:auto;
-				margin-right:auto;
+				width: 95%;
+				margin-left: auto;
+				margin-right: auto;
 				background: white;
-				padding:30px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:6px;
+				padding: 30px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				border-radius: 6px;
 			}
 			
 			.in-wrap3
 			{
-				width:100%;
-				margin-left:auto;
-				margin-right:auto;
-				margin-bottom:20px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
 				background-image: linear-gradient(35deg, #CAE9FF, #EEF8FF, snow);
-				height:auto;
-				padding:20px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
+				height: auto;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				border-radius: 10px;
 			}
 				
 			.submit, .cancel
 			{
 				background-color: white;
 				color: black;
-				font-family:georgia,garamond,serif;
+				font-family: georgia,garamond,serif;
 				text-align: center;
 				text-decoration: none;
-				padding:10px;
-				border:none;
-				width:160px;
-				height:45px;
-				opacity:60%;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				font-size:16px;
+				padding: 10px;
+				border: none;
+				width: 160px;
+				height: 45px;
+				opacity: 60%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				font-size: 16px;
 			}
 			
 			.submit:hover
 			{
-				background-color:#6FC4FF;
+				background-color: #6FC4FF;
 				color: white;
-				transition:0.5s;
+				transition: 0.5s;
 			}
 			
 			.cancel:hover
 			{
-				background-color:red;
+				background-color: red;
 				color: white;
-				transition:0.5s;
+				transition: 0.5s;
 			}
 			
 			#overlay
@@ -220,61 +220,60 @@
 				position: absolute;
 				top: 80%;
 				left: 50%;
-				width:60%;
-				transform:translate(-50%, -50%);
+				width: 60%;
+				transform: translate(-50%, -50%);
 				border: 2px solid grey;
-				box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+				box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 				display: none;
-				
 				z-index: 1000;
 			}
 			
 			.wrap2
 			{
-				width:90%;
-				margin-left:auto;
-				margin-right:auto;
-				background-image:linear-gradient(180deg, #EBF2FF, snow, #FDFEFF, white);
-				padding:30px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+				background-image: linear-gradient(180deg, #EBF2FF, snow, #FDFEFF, white);
+				padding: 30px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			table, th, td
 			{
-				border:none;
-				border-collapse:collapse;
-				padding:10px;
+				border: none;
+				border-collapse: collapse;
+				padding: 10px;
 			}
 			
 			table
 			{
-				width:100%;
-				font-size:16px;
+				width: 100%;
+				font-size: 16px;
 			}
 			
 			.tb_title
 			{
-				text-align:left;
+				text-align: left;
 			}
 			
 			.tb_image
 			{
-				height:250px;
-				border:solid 1px grey;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				height: 250px;
+				border: solid 1px grey;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 						
 			.tb_publish
 			{
-				text-align:left;
+				text-align: left;
 			}
 			
 			.tb_content
 			{
 				white-space: pre-line;
-				text-align:left;
-				padding:20px;
-				vertical-align:top;
+				text-align: left;
+				padding: 20px;
+				vertical-align: top;
 			}
 			
 			.edit_btn			
@@ -310,7 +309,7 @@
 			{
 				background-color: snow;
 				color: black;
-				transition:0.5s;
+				transition: 0.5s;
 			}
 			
 			.add_btn			
@@ -319,22 +318,22 @@
 				color: white;
 				text-align: center;
 				text-decoration: none;
-				padding:10px;
-				border:none;
-				width:200px;
-				height:50px;
-				border-radius:5px;
-				opacity:60%;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				font-size:20px;
-				font-weight:bold;
+				padding: 10px;
+				border: none;
+				width: 200px;
+				height: 50px;
+				border-radius: 5px;
+				opacity: 60%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				font-size: 20px;
+				font-weight: bold;
 			}
 			
 			.add_btn:hover
 			{
-				box-shadow:5px 5px 10px rgba(0,0,0,0.2);
-				opacity:1;
-				transition:0.5s;
+				box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+				opacity: 1;
+				transition: 0.5s;
 			}
 			
 			textarea
@@ -368,11 +367,10 @@
 				
 				<div id = "Show" class = "tabcontent">	
 						<button class = 'add_btn' style = "text-align:center;" onclick = "on()"><i class = 'fas fa-plus'></i> Add Post </button>
-						
 						<br><br>
 					<div class = "wrap3">
 					<?php
-						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Pending' order by com_published");						
+						$result = mysqli_query($connected, "select * FROM community WHERE com_status = 'Pending' order by com_published");						
 						$rowcount = mysqli_num_rows($result);
 							
 						if($rowcount == 0)
@@ -382,47 +380,45 @@
 						else
 						{	
 						
-						while($row = mysqli_fetch_array($result))
-						{	
+							while($row = mysqli_fetch_array($result))
+							{	
 					
 					?>
 						<div class = "in-wrap3">
 					<?php							
-						echo "<table>";
-							
-							echo "<tr>";									
-								echo "<th class = 'tb_title'  colspan = 2>" .$row['com_title']. "</th>";
-							echo "</tr>";
-							
-							echo "<tr>";
-								if($row['com_media'] == NULL)
-								{
-									echo '<td class = "tb_image">No Media Uploaded</td>';
-								}
-								else
-								{
-									echo '<td><img class = "tb_image" src = "upload/'.$row["com_media"].'"></td>';
-								}	
-								echo '<td class = "tb_content" width = "80%">' .$row['com_content']. '</td>';
-								
-							echo "</tr>";						
-								
-							echo "<tr>";
-								echo "<td class = 'tb_publish'> Published on : <br>" .$row['com_published']. "</td>";
-								echo "<td> Published by : " .$row['user_id']. "</td>";
-							echo "</tr>";
-							
-							echo "<tr>";
-								echo "<td colspan = 2><center><button class = 'edit_btn' id = 'com_app'><a href = 'com_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
-								echo "<button class = 'edit_btn'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center></td>";
-							echo "</tr>";
-							
-						echo "</table>";
+								echo "<table>";
+									echo "<tr>";									
+										echo "<th class = 'tb_title'  colspan = 2>" .$row['com_title']. "</th>";
+									echo "</tr>";
+									
+									echo "<tr>";
+										if($row['com_media'] == NULL)
+										{
+											echo '<td class = "tb_image">No Media Uploaded</td>';
+										}
+										else
+										{
+											echo '<td><img class = "tb_image" src = "upload/'.$row["com_media"].'"></td>';
+										}	
+										echo '<td class = "tb_content" width = "80%">' .$row['com_content']. '</td>';
+										
+									echo "</tr>";						
+										
+									echo "<tr>";
+										echo "<td class = 'tb_publish'> Published on : <br>" .$row['com_published']. "</td>";
+										echo "<td> Published by : " .$row['user_id']. "</td>";
+									echo "</tr>";
+									
+									echo "<tr>";
+										echo "<td colspan = 2><center><button class = 'edit_btn' id = 'com_app'><a href = 'com_approve.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to approve this?');\"><i class = 'fas fa-check'></i></a></button>";
+										echo "<button class = 'edit_btn'><a href = 'com_delete.php?id=".$row['com_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><i class = 'fas fa-times'></i></a></button></center></td>";
+									echo "</tr>";
+								echo "</table>";
 					?>
 						</div>
 					<?php
+							}
 						}
-					}
 					?>
 					</div>
 				</div>
@@ -433,7 +429,6 @@
 					<div class = "ParentWrap">
 					<?php
 						$result = mysqli_query($connected,"select * FROM community WHERE com_status = 'Approved' ORDER BY com_published DESC");
-						
 						$rowcount = mysqli_num_rows($result);
 							
 						if($rowcount == 0)
@@ -449,24 +444,22 @@
 						
 					<?php 							
 								echo "<table>";
-							
-								echo "<tr>";
-									echo "<th colspan = 2 style = 'text-align:right;'><a href = 'com_show.php?id=".$row['com_id']."'><button class = 'edit_btn2' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
-								echo "</tr>";
-							
-								echo "<tr>";									
-									echo "<th class = 'tb_title'  colspan = 2>" .$row['com_title']. "</th>";
-								echo "</tr>";
+									echo "<tr>";
+										echo "<th colspan = 2 style = 'text-align:right;'><a href = 'com_show.php?id=".$row['com_id']."'><button class = 'edit_btn2' onclick = 'on2()'><i class = 'fa fa-eye'></i></button></a>";
+									echo "</tr>";
 								
-								echo "<tr>";									
-									echo "<td class = 'tb_content'><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";
-								echo "</tr>";
-								
-								echo "<tr>";
-									echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
-								echo "</tr>";
-								
-							echo "</table>";																
+									echo "<tr>";									
+										echo "<th class = 'tb_title'  colspan = 2>" .$row['com_title']. "</th>";
+									echo "</tr>";
+									
+									echo "<tr>";									
+										echo "<td class = 'tb_content'><img class = 'tb_image' src = 'upload/".$row['com_media']."'></td>";
+									echo "</tr>";
+									
+									echo "<tr>";
+										echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['com_published']. "</td>";
+									echo "</tr>";
+								echo "</table>";																
 						?>
 						
 						</div>
@@ -478,7 +471,6 @@
 					</div>
 				</div>
 				
-				
 				<!-- Overlay Add Community Post -->
 				<div id = "overlay" class = "overlay">
 					<div class = "wrap2" style = "width:100%;">
@@ -488,7 +480,6 @@
 							<hr style = "border-bottom:2px solid grey;">
 						
 							<div class = "InputText" style = "display:none;">
-							
 							<?php
 								$value = '';
 								$query = "SELECT com_id from community order by com_id DESC LIMIT 1";
