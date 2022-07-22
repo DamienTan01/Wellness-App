@@ -18,16 +18,16 @@
 		<style>
 			.con
 			{
-				padding:5%;
-				padding-top:5px;
-				margin-top:5px;
-				margin-left:auto;
-				margin-right:auto;
+				padding: 5%;
+				padding-top: 5px;
+				margin-top: 5px;
+				margin-left: auto;
+				margin-right: auto;
 			}
 			
 			.tablink 
 			{
-				font-weight:bold;
+				font-weight: bold;
 				background-color: #CCC5FF;
 				color: black;
 				float: left;
@@ -40,8 +40,8 @@
 			.tablink:hover 
 			{
 				background-color: #E6E3FF;
-				transition:0.3s;
-				text-shadow:-0.5px 1px black;
+				transition: 0.3s;
+				text-shadow: -0.5px 1px black;
 			}		
 
 			/* Style the tab content */
@@ -49,141 +49,141 @@
 			{				
 				display: none;
 				background-color: snow;
-				padding:20px;
+				padding: 20px;
 				padding-top: 70px;
 				box-shadow: 5px 5px 10px rgba(0,0,0,0.5);				
 			}
 			
 			h1
 			{
-				text-align:center;
-				font-style:italic;
-				font-weight:bold;
+				text-align: center;
+				font-style: italic;
+				font-weight: bold;
 			}
 			
 			/* Style the input */
 			.wrap
 			{
-				width:90%;
-				margin-left:auto;
-				margin-right:auto;
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
 				background: white;
-				padding:30px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:6px;
+				padding: 30px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				border-radius: 6px;
 			}
 			
 			.in-wrap
 			{
-				width:100%;
-				margin-left:auto;
-				margin-right:auto;
-				margin-bottom:20px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 20px;
 				background-image: linear-gradient(35deg, #CAE9FF, #EEF8FF, snow);
-				height:auto;
-				padding:20px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
-				border-radius:10px;
+				height: auto;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
+				border-radius: 10px;
 			}			
 			
 			.wrap .InputText 
 			{				
-				height:60px;
-				width:100%;
-				position:relative;
+				height: 60px;
+				width: 100%;
+				position: relative;
 			}
 			
 			.wrap .InputText input
 			{
-				height:100%;
-				width:100%;
-				border:none;
-				background-color:white;
-				border-bottom:2px solid silver;
-				font-size:16px;
-				outline:none;
+				height: 100%;
+				width: 100%;
+				border: none;
+				background-color: white;
+				border-bottom: 2px solid silver;
+				font-size: 16px;
+				outline: none;
 			}
 			
 			.wrap .InputText input:focus ~ label,
 			.wrap .InputText input:valid ~ label
 			{				
 				transform: translateY(-40px);
-				transition:all 0.3s ease;
-				color:black;
+				transition: all 0.3s ease;
+				color: black;
 			}
 			
 			.wrap .InputText label
 			{
-				font-size:18px;
-				position:absolute;
-				bottom:10px;
-				left:0;
-				color:grey;
+				font-size: 18px;
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+				color: grey;
 			}
 			
 			.disabled ~ label
 			{
 				transform: translateY(-40px);
-				transition:all 0.3s ease;
-				color:black;
-				outline:none;				
+				transition: all 0.3s ease;
+				color: black;
+				outline: none;				
 			}
 			
 			.wrap .InputText .underline
 			{
-				position:absolute;
-				bottom:0px;
-				height:2px;
-				width:100%;				
+				position: absolute;
+				bottom: 0px;
+				height: 2px;
+				width: 100%;				
 			}				
 				
 			.submit
 			{
 				background-color: white;
 				color: black;
-				font-family:georgia,garamond,serif;
-				font-size:16px;
+				font-family: georgia,garamond,serif;
+				font-size: 16px;
 				text-align: center;
 				text-decoration: none;
 				padding: 10px 100px;
-				border:none;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				border: none;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			.submit:hover
 			{
-				background-color:#5199F9;
+				background-color: #5199F9;
 				color: white;
-				transition:0.3s;
+				transition: 0.3s;
 			}
 			
 			table, th, td
 			{
-				border:none;
-				border-collapse:collapse;
-				padding:10px;
+				border: none;
+				border-collapse: collapse;
+				padding: 10px;
 			}
 			
 			table
 			{
-				width:100%;
+				width: 100%;
 			}
 			
 			.tb_title
 			{
-				text-align:left;
+				text-align: left;
 			}
 			
 			.tb_image
 			{
-				width:250px;
-				border:solid 1px grey;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				width: 250px;
+				border: solid 1px grey;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			.tb_publish
 			{
-				text-align:right;
+				text-align: right;
 			}
 			
 			.tb_content
@@ -197,22 +197,22 @@
 				color: white;
 				text-align: center;
 				text-decoration: none;
-				padding:10px;
-				border:none;
-				border-radius:30%;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				padding: 10px;
+				border: none;
+				border-radius: 30%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			.material-icons
 			{
-				font-size:25px;
+				font-size: 25px;
 			}
 			
 			.edit_btn:hover
 			{
 				background-color: snow;
 				color: black;
-				transition:0.3s;
+				transition: 0.3s;
 			}
 			
 			textarea
@@ -229,16 +229,16 @@
 				border: dashed grey 3px;
 				text-align: center;
 				text-decoration: none;
-				padding:10px;
-				border-radius:10px;
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				padding: 10px;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			.uploadbtn:hover
 			{
 				background-color: #cccccc;
 				color: black;
-				transition:0.3s;
+				transition: 0.3s;
 			}
 		</style>
 	</head>
@@ -275,42 +275,39 @@
 							else
 							{	
 							
-							while($row = mysqli_fetch_array($result))
-							{
+								while($row = mysqli_fetch_array($result))
+								{
 						?>
 						<div class = "in-wrap">								
 						
 						<?php 							
-							echo "<table>";
-							
-								echo "<tr>";									
-									echo "<th colspan = 2 style = 'text-align:right;'><a href = 'tip_delete.php?id=".$row['tip_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'material-icons'>delete</i></button></a></th>";
-								echo "</tr>";
-							
-								echo "<tr>";									
-									echo "<th class = 'tb_title'  colspan = 2>" .$row['tip_title']. "</th>";
-								echo "</tr>";
-								
-								echo "<tr>";
-									echo '<td><img class = "tb_image" src = "upload/'.$row["tip_media"].'"></td>';
-									echo '<td class = "tb_content" width = "80%">' .$row['tip_content']. '</td>';
-								echo "</tr>";						
+									echo "<table>";
+										echo "<tr>";									
+											echo "<th colspan = 2 style = 'text-align:right;'><a href = 'tip_delete.php?id=".$row['tip_id']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'material-icons'>delete</i></button></a></th>";
+										echo "</tr>";
 									
-								echo "<tr>";
-									echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['tip_published']. "</td>";
-								echo "</tr>";
-								
-							echo "</table>";																
+										echo "<tr>";									
+											echo "<th class = 'tb_title'  colspan = 2>" .$row['tip_title']. "</th>";
+										echo "</tr>";
+										
+										echo "<tr>";
+											echo '<td><img class = "tb_image" src = "upload/'.$row["tip_media"].'"></td>';
+											echo '<td class = "tb_content" width = "80%">' .$row['tip_content']. '</td>';
+										echo "</tr>";						
+											
+										echo "<tr>";
+											echo "<td class = 'tb_publish' colspan = 2> Published on : " .$row['tip_published']. "</td>";
+										echo "</tr>";
+									echo "</table>";																
 						?>
 						
 						</div>
 						
 						<?php
-							}
+								}
 							}
 						?>
 					</div>
-					
 					<br><br>			
 				</div>
 
@@ -324,7 +321,7 @@
 							
 							<div class = "InputText" style = "display:none;">
 							
-							<?PHP
+							<?php
 								$value2 = '';
 								$query = "SELECT tip_id from tips order by tip_id DESC LIMIT 1";
 								$stmt = mysqli_query($connected, $query);

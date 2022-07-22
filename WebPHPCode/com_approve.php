@@ -13,7 +13,7 @@
 		
 		$query = "UPDATE `community` SET `com_status` = '$COMSTATUS' WHERE com_id = '$ID'";
 		
-		if(mysqli_query($connected,$query))
+		if(mysqli_query($connected, $query))
 		{
 			header("location:Community.php?st=success");
 			$_SESSION['message'] = "<script>alert('Succesfully Approved !');</script>";

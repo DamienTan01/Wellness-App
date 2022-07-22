@@ -29,17 +29,16 @@
 		<style>
 			body
 			{
-				background-color:#EFFCFF;
+				background-color: #EFFCFF;
 			}
 			
 			.content
 			{
-				padding:5px;				
-				height:100%;
-				padding-top:20px;
-				font-size:16px;
-				font-family:georgia,garamond,serif;
-				
+				padding: 5px;				
+				height: 100%;
+				padding-top: 20px;
+				font-size: 16px;
+				font-family: georgia,garamond,serif;
 				background-image: url(icon/background.png);
 				background-repeat: no-repeat;
 				background-size: cover;
@@ -67,45 +66,44 @@
 			{
 				background-color: white;
 				color: black;				
-				opacity:80%;
+				opacity: 80%;
 				box-shadow: 0 0 10px rgba(0,0,0,0.5);
 			}		
 			
 			.navbar
 			{				
-				font-family:georgia,garamond,serif;
-				text-align:left;
-				background-color:#85FFFF;
+				font-family: georgia,garamond,serif;
+				text-align: left;
+				background-color: #85FFFF;
 				background-image: linear-gradient(0deg, #B1ADF7, #D3D1FF, snow);
-				position:sticky;
-				height:9.5%;
-				width:100%;
-				font-size:18px;
-				padding:12px;
+				position: sticky;
+				height: 9.5%;
+				width: 100%;
+				font-size: 18px;
+				padding: 12px;
 				box-shadow: 0 0 10px rgba(0,0,0,0.5);
-				
-				z-index:900;
+				z-index: 900;
 			}
 
 			.navbar a 
 			{
-				font-weight:bold;
-				text-decoration:none;				
-				color:grey;
-				text-align:left;
-				padding-top:15px;
-				padding-bottom:15px;
-				padding-left:20px;
-				padding-right:20px;
+				font-weight: bold;
+				text-decoration: none;				
+				color: grey;
+				text-align: left;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				padding-left: 20px;
+				padding-right: 20px;
 			}
 
 			.navbar a:hover
 			{
 				box-shadow: 0 0 50px #CCC5FF;
-				text-shadow:-0.5px 1px black;
-				background-color:snow;
+				text-shadow: -0.5px 1px black;
+				background-color: snow;
 				transition: 0.3s;
-				border-radius:15px;
+				border-radius: 15px;
 			}		
 		</style>
 	</head>
@@ -113,8 +111,7 @@
 	<body>	
 		<div class = "navbar">
 			<a href = "Home.php"><img class = "logo" src = "icon/Logo.png" width = "50"></a>
-			<a href = "Profile.php"><i class="far fa-meh-blank"></i> &nbsp;&nbsp;<?PHP echo $name; ?>
-			</a>
+			<a href = "Profile.php"><i class="far fa-meh-blank"></i> &nbsp;&nbsp;<?PHP echo $name; ?></a>
 			
 			<a href = "Staff.php"><i class = "far fa-grimace"></i>&nbsp;&nbsp;Admin</a>
 			<a href = "Tips.php"><i class = "fa fa-bookmark"></i>&nbsp;&nbsp;Tips</a>
@@ -123,11 +120,9 @@
 			<a href = "index.php" onclick = "return confirm('Are you sure you want to logout ?')">Log Out &nbsp;&nbsp;<i class = "fas fa-sign-out-alt"></i></a>
 		
 		</div>
-			
 			<a class = "Scrollbtn" id = "Scrollbtn" onclick = "window.scrollTo({top: 0, behavior: 'smooth'});">
 				<i class = "material-icons">		publish</i>
 			</a>
-			
 	
 		<script>
 			var Scrollbtn = document.getElementById("Scrollbtn");
