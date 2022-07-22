@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Activity_Exercise extends AppCompatActivity implements ExerciseInterface {
     public static final String EXTRAKEY_UID = "USER_ID";
-    public static final String API = "http://192.168.0.175/wellnessapp/api.php";
+    public static final String API = "http://192.168.0.175:8080/wellnessapp/api.php";
     private String user_id;
     private TextView tv_mark;
     private TextView tv_achievement1;
