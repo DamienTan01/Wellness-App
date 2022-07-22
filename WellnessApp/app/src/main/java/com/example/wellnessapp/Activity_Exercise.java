@@ -48,7 +48,7 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
     }
 
     public void btn_dinner_clicked(View view){
-        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act06");
+        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act006");
         update_user_mark();
         update_user_achievement();
     }
