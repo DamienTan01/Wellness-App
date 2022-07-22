@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66fff6"
+    tools:context=".Exercise2Activity">
+
+    <TextView
+        android:id="@+id/tv_activities_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activities"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/tv_achievement_title"
+        android:layout_width="91dp"
+        android:layout_height="32dp"
+        android:text="Achievement"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_achievement"
+        app:layout_constraintEnd_toEndOf="@+id/tv_activities_title"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/tv_activities_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_activities_title"
+        app:layout_constraintVertical_bias="0.966" />
+
+    <TextView
+        android:id="@+id/tv_point_display"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/circle_display_texture"
+        android:text="Point"
+        android:gravity="center"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_achievement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_achievement"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
+        android:background="@drawable/achievement_block_texture"
+        android:text="Achievement 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_achievement_title"
+        app:layout_constraintEnd_toStartOf="@+id/tv_achievement2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+        android:id="@+id/tv_achievement2"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
+        android:background="@drawable/achievement_block_texture"
+        android:text="Achievement 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_achievement"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/long_button_texture"
+        android:onClick="btn_exercise_clicked"
+        android:stateListAnimator="@null"
+        android:text="Exercise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_point_display" />
+
+
+    <ImageView
+        android:id="@+id/btn_sit"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_button_texture"
+        android:src="@drawable/situp"
+        android:onClick="btn_sit_clicked"
+        android:stateListAnimator="@null"
+        android:text="Sit-Down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_run"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_exercise"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <ImageView
+        android:id="@+id/btn_run"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_button_texture"
+        android:src="@drawable/running"
+        android:onClick="btn_run_clicked"
+        android:stateListAnimator="@null"
+        android:text="Running"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_sit"
+        app:layout_constraintTop_toTopOf="@+id/btn_sit" />
+
+    <ImageView
+        android:id="@+id/btn_weight"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_button_texture"
+        android:src="@drawable/weightlifting"
+        android:onClick="btn_weight_clicked"
+        android:stateListAnimator="@null"
+        android:text="WeightLifting"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cycling"
+        app:layout_constraintEnd_toStartOf="@+id/btn_cycling"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_cycling" />
+
+    <ImageView
+        android:id="@+id/btn_cycling"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_button_texture"
+        android:src="@drawable/cycling"
+        android:onClick="btn_cycling_clicked"
+        android:stateListAnimator="@null"
+        android:text="Cycling"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_yoga"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_weight"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sit" />
+
+    <ImageView
+        android:id="@+id/btn_yoga"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/circle_button_texture"
+        android:src="@drawable/yoga"
+        android:onClick="btn_yoga_clicked"
+        android:stateListAnimator="@null"
+        android:text="Yoga"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cycling"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_cycling"
+        app:layout_constraintTop_toTopOf="@+id/btn_cycling" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
