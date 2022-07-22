@@ -7,8 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 public class Activity_Exercise extends AppCompatActivity implements ExerciseInterface {
     public static final int REQUEST_CODE = 100;
@@ -24,6 +27,10 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         user_id = "USR000";
 

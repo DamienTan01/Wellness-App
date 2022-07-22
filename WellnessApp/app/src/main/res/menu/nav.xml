@@ -3,7 +3,7 @@
     <item android:title="@string/menuHome"
         android:id="@+id/home"
         android:icon="@drawable/home"/>
-    <item android:title="@string/menuAchieve"
+    <item android:title="@string/menuScore"
         android:id="@+id/achievement"
         android:icon="@drawable/score"/>
     <item android:title="@string/menuCom"
