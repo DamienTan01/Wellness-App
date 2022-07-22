@@ -14,7 +14,7 @@ public class main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise2);
+        setContentView(R.layout.activity_exercise);
 
         Objects.requireNonNull(getSupportActionBar()).hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

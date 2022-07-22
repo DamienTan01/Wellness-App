@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Activity_Exercise extends AppCompatActivity implements ExerciseInterface {
+    public static final int REQUEST_CODE = 100;
+    public static final int RESULT_SUCCESS = 101;
     public static final String EXTRAKEY_UID = "USER_ID";
     public static final String API = "http://192.168.0.175:8080/wellnessapp/api.php";
     private String user_id;
@@ -26,8 +28,6 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
         user_id = "USR000";
 
         tv_mark = findViewById(R.id.tv_point_display);
-        tv_achievement1 = findViewById(R.id.tv_achievement);
-        tv_achievement2 = findViewById(R.id.tv_achievement2);
         update_user_achievement();
         update_user_mark();
 
@@ -49,12 +49,6 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
 
     public void btn_dinner_clicked(View view){
         new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act006");
-        update_user_mark();
-        update_user_achievement();
-    }
-
-    public void btn_rest_clicked(View view){
-        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act007");
         update_user_mark();
         update_user_achievement();
     }
@@ -83,16 +77,48 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
         }
     }
 
-    public void btn_meal_clicked(View view){
-        Intent intentExercise = new Intent(this,Exercise2Activity.class);
-        startActivityForResult(intentExercise,Exercise2Activity.REQUEST_CODE);
+    public void btn_exercise_clicked(View view) {
+        Intent replyIntent = new Intent();
+        replyIntent.putExtra(Activity_Exercise.EXTRAKEY_UID,user_id);
+        setResult(RESULT_SUCCESS,replyIntent);
+        finish();
+    }
+
+    public void btn_sit_clicked(View view) {
+        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act000");
+        update_user_mark();
+        update_user_achievement();
+    }
+
+    public void btn_run_clicked(View view) {
+        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act001");
+        update_user_mark();
+        update_user_achievement();
+    }
+
+    public void btn_weight_clicked(View view) {
+        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act002");
+        update_user_mark();
+        update_user_achievement();
+    }
+
+    public void btn_cycling_clicked(View view) {
+        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act003");
+        update_user_mark();
+        update_user_achievement();
+    }
+
+    public void btn_yoga_clicked(View view) {
+        new APIFetcher(this).execute(API,"action=newActivity&user_id="+user_id+"&action_id=act004");
+        update_user_mark();
+        update_user_achievement();
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // Add code to update the database.
-        if(requestCode == Exercise2Activity.REQUEST_CODE){
-            if(resultCode == Exercise2Activity.RESULT_SUCCESS){
+        if(requestCode == Activity_Exercise.REQUEST_CODE){
+            if(resultCode == Activity_Exercise.RESULT_SUCCESS){
                 user_id = data.getStringExtra(EXTRAKEY_UID);
             }
         }
