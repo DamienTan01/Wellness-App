@@ -223,8 +223,6 @@
 		</style>
 	</head>
 	
-	
-	
 	<body>
 		<div class = "content">
 			<div class = "wrap">
@@ -261,7 +259,7 @@
 					<br>
 					
 					<div class = "InputText">
-						<input type = "text" name = "User_email" id = "User_email" required value = "<?PHP echo $email; ?>"/>
+						<input type = "email" name = "User_email" id = "User_email" required value = "<?PHP echo $email; ?>"/>
 						<label>Email</label>
 					</div>
 					

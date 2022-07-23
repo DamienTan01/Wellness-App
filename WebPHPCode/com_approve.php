@@ -1,4 +1,4 @@
-<?PHP
+<?php
 	//com_approve.php
 	
 	include("connect.php");	

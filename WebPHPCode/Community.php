@@ -370,7 +370,7 @@
 						<br><br>
 					<div class = "wrap3">
 					<?php
-						$result = mysqli_query($connected, "select * FROM community WHERE com_status = 'Pending' order by com_published");						
+						$result = mysqli_query($connected, "select * FROM community WHERE com_status = 'Pending' order by com_published DESC");						
 						$rowcount = mysqli_num_rows($result);
 							
 						if($rowcount == 0)

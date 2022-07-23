@@ -1,4 +1,4 @@
-<?PHP
+<?php
 	include('connect.php');
 	session_start();
 	
@@ -24,11 +24,7 @@
 			$EMAIL			= $_POST['User_email'];
 			$PASSWORD		= $_POST['User_pwd'];			
 			
-			$query = "
-			INSERT INTO `users`
-			(`user_id`, `user_type`, `username`, `email`, `password`) 
-			VALUES ('$USER_id', '$USER_type', '$USERNAME', '$EMAIL', '$PASSWORD');
-			";
+			$query = "INSERT INTO `users`(`user_id`, `user_type`, `username`, `email`, `password`) VALUES ('$USER_id', '$USER_type', '$USERNAME', '$EMAIL', '$PASSWORD');";
 			
 			if(mysqli_multi_query($connected,$query))
 			{
