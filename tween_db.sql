@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2022 at 03:12 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Generation Time: Jul 23, 2022 at 10:08 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,19 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tween_db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ach_records`
---
-
-CREATE TABLE `ach_records` (
-  `record_id` int(11) NOT NULL,
-  `user_id` varchar(6) NOT NULL,
-  `ach_id` varchar(6) NOT NULL,
-  `ach_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -80,10 +67,7 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`commentID`, `com_id`, `user_id`, `content`) VALUES
-(18, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
-(19, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
-(20, '000005', 'ADM001', 'No please'),
-(21, '000006', 'ADM001', 'Okay, good.');
+(18, '000004', 'ADM000', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
 
 -- --------------------------------------------------------
 
@@ -107,12 +91,10 @@ CREATE TABLE `community` (
 --
 
 INSERT INTO `community` (`com_id`, `com_title`, `com_content`, `com_media`, `com_published`, `com_like`, `com_status`, `user_id`) VALUES
-('000001', 'Im on my way ~', 'Road to radiant\r\nRadiant, wait for me !!!', '9768_Radiant_Valorant.png', '2022-07-18 13:20:54', 0, 'Pending', 'ADM001'),
-('000002', 'Celebrity', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbb', 'celebrity.png', '2022-07-18 13:55:54', 0, 'Approved', 'USR000'),
-('000003', 'Testing Community', 'Testing 123... Approve pending please... Thank you!', 'Testing.png', '2022-07-18 14:47:29', 0, 'Approved', 'USR000'),
-('000004', 'Bad day ever', 'Once upon a time,\r\n\r\nMarry found her lovely prince outside the castle.\r\n\r\nShe wanted to marry him but got rejected.', 'Badday.png', '2022-07-19 03:22:15', 0, 'Approved', 'USR000'),
-('000005', 'Bad day ever 2', 'However, the prince said that if the princess could give him diamonds, he might think about the marriage.\r\n\r\nPrincess could not find any diamond in her country.\r\n\r\nShe felt very disappointed so she decided to suicide.\r\n\r\nWhat a bad day...', 'Badday.png', '2022-07-19 03:40:10', 0, 'Pending', 'ADM000'),
-('000006', 'Loading...', 'Have a good night', 'banner.gif', '2022-07-20 13:06:34', 0, 'Approved', 'ADM001');
+('000002', 'Celebrity', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbb', 'celebrity.png', '2022-07-18 05:55:54', 0, 'Approved', 'USR000'),
+('000003', 'Testing Community', 'Testing 123... Approve pending please... Thank you!', 'Testing.png', '2022-07-18 06:47:29', 0, 'Approved', 'USR000'),
+('000004', 'Bad day ever', 'Once upon a time,\r\n\r\nMarry found her lovely prince outside the castle.\r\n\r\nShe wanted to marry him but got rejected.', 'Badday.png', '2022-07-18 19:22:15', 0, 'Approved', 'USR000'),
+('000005', 'What is this?', 'This is a Sashimi...', 'sushi.png', '2022-07-22 15:30:50', 0, 'Approved', 'ADM000');
 
 -- --------------------------------------------------------
 
@@ -137,7 +119,7 @@ CREATE TABLE `records` (
 CREATE TABLE `tips` (
   `tip_id` varchar(6) NOT NULL,
   `tip_title` varchar(255) NOT NULL,
-  `tip_content` text NOT NULL,
+  `tip_content` longtext NOT NULL,
   `tip_media` text DEFAULT NULL,
   `tip_published` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -147,12 +129,12 @@ CREATE TABLE `tips` (
 --
 
 INSERT INTO `tips` (`tip_id`, `tip_title`, `tip_content`, `tip_media`, `tip_published`) VALUES
-('TIP000', 'Test Tip', 'asdjfhlasd fljadsh flj ahsdlfkjh df', NULL, '2022-07-18 03:49:08'),
 ('TIP001', 'Sha', 'Shy shy shy', '샤_bgr_2.jpg', '2022-07-19 03:03:38'),
 ('TIP002', 'Test Tip2', 'AHHHHHHHHHHHHH', '샤_bgr_1.jpg', '2022-07-19 03:23:33'),
 ('TIP003', 'Alcohol Free Tip', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.', 'image1.jpg', '2022-07-19 03:23:54'),
 ('TIP004', 'ERm', 'What are the 5 duties of a principal? \r\n\r\n- Shaping a vision of academic success for all students. \r\n\r\n- Creating a climate hospitable to education. \r\n\r\n- Cultivating leadership in others. \r\n\r\n- Improving instruction. \r\n\r\n- Managing people, data and processes.\r\n', 'Link.png', '2022-07-19 03:29:12'),
-('TIP005', 'What are 5 benefits of wellness?', 'It is in high demand.\r\n\r\nIt improves productivity and performance.\r\n\r\nIt lowers the risk of illness and the impact of stress.\r\n\r\nIt lowers healthcare costs.\r\n\r\nIt improves teamwork.\r\n', 'gudetama.png', '2022-07-19 03:36:44');
+('TIP005', 'What are 5 benefits of wellness?', 'It is in high demand.\r\n\r\nIt improves productivity and performance.\r\n\r\nIt lowers the risk of illness and the impact of stress.\r\n\r\nIt lowers healthcare costs.\r\n\r\nIt improves teamwork.\r\n', 'gudetama.png', '2022-07-19 03:36:44'),
+('TIP006', 'Tips for CS', 'Don\'t take computer science.\r\nYou go bald and you die...', 'sleep.jpg', '2022-07-22 23:28:44');
 
 -- --------------------------------------------------------
 
@@ -176,19 +158,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_type`, `username`, `name`, `dob`, `gender`, `email`, `password`) VALUES
-('ADM000', 'Admin', 'Joey', 'Ying Jie', '2001-04-19', 'F', 'crazyjoeyooi@gmail.com', '123456   '),
-('ADM001', 'Admin', 'Teriyaki', 'Lim Pau Thing', '2001-06-07', 'F', 'ptlim67@gmail.com', '654321   '),
+('ADM000', 'Admin', 'PotatoTan', 'Damien Tan', '2001-06-18', 'M', 'dtan0385@gmail.com', '123456 '),
 ('USR000', 'User', 'Jojo', NULL, NULL, NULL, 'jojo@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `ach_records`
---
-ALTER TABLE `ach_records`
-  ADD PRIMARY KEY (`record_id`);
 
 --
 -- Indexes for table `activity`
@@ -231,12 +206,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `ach_records`
---
-ALTER TABLE `ach_records`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
@@ -246,7 +215,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `records`
 --
 ALTER TABLE `records`
-  MODIFY `record_id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `record_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
