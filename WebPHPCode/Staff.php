@@ -305,7 +305,7 @@
 							<br>
 							
 							<div class = "InputText">
-								<input type = "text" name = "User_email" id = "User_email" required />
+								<input type = "email" name = "User_email" id = "User_email" required />
 								<label>Email Address</label>
 							</div>
 							

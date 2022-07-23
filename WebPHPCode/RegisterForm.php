@@ -244,6 +244,10 @@
 				
                 <br>
 				
+				<div class = "InputText" style = "display:none;">
+					<input type = "text" class = "disabled" name = "User_ID" id = "User_ID" value = "ADM000" />
+				</div>
+				
 				<div class = "InputText">
 					<input type = "text" class = "disabled" name = "User_ID" id = "User_ID" value = "ADM000" disabled />
 					<label style = "color:black;">ID (Prefix : ADM000)</label>
@@ -259,7 +263,7 @@
 				<br><br>
 				
 				<div class = "InputText">
-					<input type = "text" name = "User_email" id = "User_email" required />
+					<input type = "email" name = "User_email" id = "User_email" required />
 					<label>Email Address</label>
 				</div>
 				
