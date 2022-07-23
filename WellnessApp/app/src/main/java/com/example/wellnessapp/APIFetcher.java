@@ -94,9 +94,6 @@ public class APIFetcher extends AsyncTask<String, Integer, String> {
                 if(response.has("mark")){
                     context.post_update_user_mark(response.getString("mark"));
                 }
-                else if(response.has("achievement")){
-                    context.post_update_user_achievement(response.getString("achievement"),response.getInt("index"));
-                }
                 else {
                     Log.d("Exe", "Your point has been updated!");
                 }
