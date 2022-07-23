@@ -21,7 +21,11 @@
         <entry key="..\:/Android Projects/WellnessApp/app/src/main/res/layout/score.xml" value="0.264" />
         <entry key="..\:/Android Projects/WellnessApp/app/src/main/res/layout/signup.xml" value="0.25416666666666665" />
         <entry key="..\:/Android Projects/WellnessApp/app/src/main/res/menu/nav.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/layout/edit_profile.xml" value="0.25625" />
         <entry key="app/src/main/res/layout/home.xml" value="0.12462006079027356" />
+        <entry key="app/src/main/res/layout/main.xml" value="0.25625" />
+        <entry key="app/src/main/res/layout/profile.xml" value="0.25625" />
+        <entry key="app/src/main/res/layout/score.xml" value="0.25625" />
       </map>
     </option>
   </component>
