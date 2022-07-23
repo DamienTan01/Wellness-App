@@ -117,7 +117,7 @@
 			<a href = "Tips.php"><i class = "fa fa-bookmark"></i>&nbsp;&nbsp;Tips</a>
 			<a href = "Community.php"><i class = "fas fa-bullhorn"></i>&nbsp;&nbsp;Community</a>
 			
-			<a href = "index.php" onclick = "return confirm('Are you sure you want to logout ?')">Log Out &nbsp;&nbsp;<i class = "fas fa-sign-out-alt"></i></a>
+			<a href = "index.php" onclick = "return confirm('Are you sure you want to log out ?')">Log Out &nbsp;&nbsp;<i class = "fas fa-sign-out-alt"></i></a>
 		
 		</div>
 			<a class = "Scrollbtn" id = "Scrollbtn" onclick = "window.scrollTo({top: 0, behavior: 'smooth'});">
