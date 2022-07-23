@@ -44,65 +44,65 @@
 			
 			h1
 			{
-				text-align:center;
-				font-style:italic;
+				text-align: center;
+				font-style: italic;
 			}
 			
 			.title
 			{
-				text-align:left;
-				font-style:italic;
-				border-bottom:2px solid grey;				
+				text-align: left;
+				font-style: italic;
+				border-bottom: 2px solid grey;				
 			}
 			
 			.wrap
 			{
-				text-align:right;
-				margin-left:auto;
-				margin-right:auto;
-				background:snow;
-				padding:20px;
-				width:75%;
-				
-				box-shadow:0 0 10px rgba(0,0,0,0.2);
+				text-align: right;
+				margin-top: 20px;
+				margin-left: auto;
+				margin-right: auto;
+				background: snow;
+				padding: 20px;
+				width: 75%;
+				box-shadow: 0 0 10px rgba(0,0,0,0.2);
 			}
 			
 			.wrap .InputText 
 			{
-				text-align:center;
-				height:70px;
-				width:50%;
-				position:relative;				
+				text-align: center;
+				height: 70px;
+				width: 50%;
+				position: relative;				
 			}
 			
 			.wrap .InputText input
 			{
-				height:100%;
-				width:100%;
-				background:snow;
-				border:none;
-				border-bottom:2px solid silver;
-				font-size:20px;
-				outline:none;				
+				height: 100%;
+				width: 100%;
+				background: snow;
+				border: none;
+				border-bottom: 2px solid silver;
+				font-size: 20px;
+				outline: none;				
 			}
 			
 			.wrap .InputText input:focus ~ label,
 			.wrap .InputText input:valid ~ label
 			{	
 				transform: translateY(-50px);
-				transition:all 0.3s ease;
-				color:black;
-				outline:none;
+				transition: all 0.3s ease;
+				color: black;
+				outline: none;
 			}
 			
 			.wrap .InputText label
 			{
-				font-size:20px;
-				position:absolute;
-				bottom:10px;
-				left:0;
-				color:grey;
-				pointer-events:none;
+				font-size: 20px;
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+				color: grey;
+				pointer-events: none;
 			}
 			
 			.wrap .InputText .underline 
@@ -134,10 +134,10 @@
 				background-color: white;
 				color: black;
 				font-family:georgia,garamond,serif;
-				font-size:20px;
+				font-size:18px;
 				text-align: center;
 				text-decoration: none;
-				padding: 10px 100px;
+				padding: 15px 70px;
 				border:none;
 				box-shadow:0 0 10px rgba(0,0,0,0.2);
 				border-radius:50px;
@@ -215,6 +215,14 @@
 				box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
 			}
 			/* End of style Select */
+			
+			.disabled ~ label
+			{
+				transform: translateY(-50px);
+				transition: all 0.3s ease;
+				color: black;
+				outline: none;				
+			}
 		</style>
 	</head>
 	
@@ -237,8 +245,8 @@
                 <br>
 				
 				<div class = "InputText">
-					<input type = "text" name = "User_ID" id = "User_ID" value = "ADM000" required />
-					<label>ID (Prefix : ADM000)</label>
+					<input type = "text" class = "disabled" name = "User_ID" id = "User_ID" value = "ADM000" disabled />
+					<label style = "color:black;">ID (Prefix : ADM000)</label>
 				</div>
 				
 				<br><br>
