@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg2"
-    tools:context=".editprofile">
+    tools:context=".profile">
 
 
     <TextView
@@ -14,19 +14,50 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Edit Profile"
+        android:text="Profile"
         android:textSize="38sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
+    <ImageButton
+        android:id="@+id/editProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_corner"
+        android:contentDescription="@string/editprofile"
+        android:scaleType="fitCenter"
+        android:src="@drawable/edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toEndOf="@+id/tv_heading"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:contentDescription="@string/logout"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_heading">
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBar"
+        tools:layout_editor_absoluteX="-8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -51,6 +82,7 @@
                     android:layout_height="165dp"
                     android:contentDescription="@string/profilepic"
                     android:src="@drawable/user" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -64,19 +96,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_image"
                 app:layout_constraintWidth_percent="0.7">
 
-                <EditText
+                <TextView
                     android:id="@+id/et_username"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:autofillHints="Username"
                     android:background="#00000000"
                     android:gravity="center"
                     android:hint="@string/username"
-                    android:inputType="textPersonName"
                     android:padding="10dp"
                     android:textColor="#000000"
-                    android:textColorHint="#808080"
+                    android:textColorHint="#546E7A"
                     android:textSize="17sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,24 +121,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_username"
                 app:layout_constraintWidth_percent="0.7">
 
-                <EditText
+                <TextView
                     android:id="@+id/et_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints="Name"
                     android:background="#00000000"
                     android:gravity="center"
                     android:hint="@string/name"
-                    android:inputType="textPersonName"
                     android:padding="10dp"
                     android:textColor="#000000"
-                    android:textColorHint="#808080"
+                    android:textColorHint="#546E7A"
                     android:textSize="17sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_email"
+                android:id="@+id/layout_birth_date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -119,21 +145,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_name"
                 app:layout_constraintWidth_percent="0.7">
 
-                <EditText
-                    android:id="@+id/et_email"
+                <TextView
+                    android:id="@+id/et_birth_date"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="Email"
+                    android:layout_height="match_parent"
                     android:background="#00000000"
                     android:gravity="center"
-                    android:hint="@string/email"
-                    android:inputType="textEmailAddress"
+                    android:hint="@string/birth_date"
                     android:padding="10dp"
                     android:textColor="#000000"
-                    android:textColorHint="#808080"
+                    android:textColorHint="#546E7A"
                     android:textSize="17sp" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout_gender"
@@ -143,26 +166,24 @@
                 android:textColorHint="#808080"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_email"
+                app:layout_constraintTop_toBottomOf="@+id/layout_birth_date"
                 app:layout_constraintWidth_percent="0.7">
 
-                <EditText
+                <TextView
                     android:id="@+id/et_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints="Gender"
                     android:background="#00000000"
                     android:gravity="center"
                     android:hint="@string/gender"
-                    android:inputType="phone"
                     android:padding="10dp"
                     android:textColor="#000000"
-                    android:textColorHint="#808080"
+                    android:textColorHint="#546E7A"
                     android:textSize="17sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layout_password"
+                android:id="@+id/layout_email"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -172,19 +193,42 @@
                 app:layout_constraintTop_toBottomOf="@+id/layout_gender"
                 app:layout_constraintWidth_percent="0.7">
 
-                <EditText
+                <TextView
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:gravity="center"
+                    android:hint="@string/email"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#546E7A"
+                    android:textSize="17sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textColorHint="#808080"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_email"
+                app:layout_constraintWidth_percent="0.7">
+
+                <TextView
                     android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints="Password"
                     android:background="#00000000"
                     android:ems="10"
                     android:gravity="center"
                     android:hint="@string/pass"
-                    android:inputType="textPassword"
                     android:padding="10dp"
                     android:textColor="#000000"
-                    android:textColorHint="#808080"
+                    android:textColorHint="#546E7A"
                     android:textSize="17sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -205,16 +249,5 @@
         app:itemTextColor="@color/white"
         app:itemIconSize="34dp"
         app:menu="@menu/nav" />
-
-    <Button
-        android:id="@+id/save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:text="@string/save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,29 +3,32 @@ package com.example.wellnessapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.Objects;
 
-public class editprofile extends AppCompatActivity {
+public class main extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile);
+        setContentView(R.layout.main);
 
         Objects.requireNonNull(getSupportActionBar()).hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button save = findViewById(R.id.save);
-        save.setOnClickListener(view -> {
-            Intent intent = new Intent(this, profile.class);
+        TextView txtSignup = findViewById(R.id.signupText);
+        txtSignup.setOnClickListener(view -> {
+            Intent intent = new Intent(this, signup.class);
             startActivity(intent);
-
         });
+
+
     }
 }

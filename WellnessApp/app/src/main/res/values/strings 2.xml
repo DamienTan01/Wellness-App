@@ -20,5 +20,4 @@
     <string name="name">Name</string>
     <string name="logout">logout</string>
     <string name="editprofile">editprofile</string>
-    <string name="save">Save</string>
 </resources>
