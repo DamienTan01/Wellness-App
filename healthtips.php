@@ -1,6 +1,6 @@
 <?php
 
-$sql = 'SELECT tip_id, tip_title, tip_comment FROM tips';
+$sql = 'SELECT tip_id, tip_title, tip_content FROM tips';
    mysql_select_db('tween_db');
    $retval = mysql_query( $sql, $conn );
 
