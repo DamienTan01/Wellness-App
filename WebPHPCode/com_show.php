@@ -18,7 +18,6 @@
 		$CONTENT 	= $row['com_content'];
 		$MEDIA 		= $row['com_media'];
 		$PUBLISH 	= $row['com_published'];
-		$LIKE 		= $row['com_like'];
 		$USER_ID 	= $row['user_id'];		
 	}
 ?>
