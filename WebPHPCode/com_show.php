@@ -18,7 +18,6 @@
 		$CONTENT 	= $row['com_content'];
 		$MEDIA 		= $row['com_media'];
 		$PUBLISH 	= $row['com_published'];
-		$LIKE 		= $row['com_like'];
 		$USER_ID 	= $row['user_id'];		
 	}
 ?>
@@ -304,8 +303,8 @@
 								$result3 = mysqli_query($connected,"select * FROM users WHERE user_id = '$USER'");
 								$row3 = mysqli_fetch_array($result3);
 								
-								echo "<td width = '10%'>" .$row3['username']. "</td>";
-								echo "<td style = 'text-align:left;'>" .$row2['content']. "</td>";
+								echo "<td width = '12%'>" .$row3['username']. "</td>";
+								echo "<td style = 'text-align:left;'> : " .$row2['content']. "</td>";
 								echo "<td width = '10%' style = 'text-align:right;'><a href = 'comment_delete.php?id=".$row2['commentID']."' onClick=\"javascript:return confirm('Are you sure you want to delete this?');\"><button class = 'edit_btn'><i class = 'fa fa-trash'></i></button></a></td>";
 							echo "</tr>";
 						echo "</table>";
