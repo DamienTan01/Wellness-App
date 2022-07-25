@@ -19,7 +19,7 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
     public static final int REQUEST_CODE = 100;
     public static final int RESULT_SUCCESS = 101;
     public static final String EXTRAKEY_UID = "USER_ID";
-    public static final String API = "http://127.0.0.1:8080/wellnessapp/api.php";
+    public static final String API = "http://192.168.0.175:8080/wellnessapp/api.php";
     private String user_id;
     private TextView tv_mark;
 
@@ -51,7 +51,6 @@ public class Activity_Exercise extends AppCompatActivity implements ExerciseInte
                         startActivity(new Intent(getApplicationContext(),profile.class));
                         overridePendingTransition(0,0);
                         return true;
-
                 }
                 return false;
             }
