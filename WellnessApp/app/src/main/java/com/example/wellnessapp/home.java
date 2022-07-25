@@ -19,7 +19,7 @@ public class home extends AppCompatActivity implements HomeInterface{
     public static final int REQUEST_CODE = 100;
     public static final int RESULT_SUCCESS = 101;
     public static final String EXTRAKEY_UID = "USER_ID";
-    public static final String API = "http://127.0.0.1:8080/wellnessapp/healthtips.php";
+    public static final String API = "http://192.168.0.175:8080/wellnessapp/healthtips.php";
     private TextView tv_tips;
 
     @Override
